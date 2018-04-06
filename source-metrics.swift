@@ -102,9 +102,8 @@ func bubbleSort(array: [Int]) -> [Int] {
     while(!isAscending(checkArray: containerArray)) {
         sortPass(sortArray: &containerArray)
     }
-    if(isAscending(checkArray: containerArray)) {
-        return containerArray
-    }
+    return containerArray
+    
 }
 
 /********************************************************************************
@@ -178,6 +177,7 @@ func newArray(arraySize: Int, order: Int) -> [Int] {
         }
         return randomArray
     }
+    return [0,0,0]
 }
 
 /********************************************************************************
