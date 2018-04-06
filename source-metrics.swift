@@ -1,6 +1,6 @@
-// Computer Science III, Period 5
-// John Williams
-// 2-April-2018
+// Computer Science II, Period 6
+// John Nguyen
+// 6-April-2018
 // Sort Metrics
 
 import Foundation
