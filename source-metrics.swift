@@ -37,6 +37,15 @@ srandom(UInt32(time(nil)))
 |    of arbitrary size
 ********************************************************************************/
 
+func swapFunc(array: inout [Int], firstIndex: Int, secondIndex: Int) {
+    if array.isEmpty { print("Your array is empty!") }
+    if (array.count < 2) { print("Your array is too small!") }
+    let tempArray = array
+    array[firstIndex] = tempArray[secondIndex]
+    array[secondIndex] = tempArray[firstIndex]
+    print("! Swapped \(array[firstIndex]) with \(array[secondIndex])!")
+    print("$ Current array state: ", array)
+}
 
 /********************************************************************************
 | 2. Define a function to sort an integer array of arbitrary size in ascending order
@@ -45,6 +54,46 @@ srandom(UInt32(time(nil)))
 |    The function should return a new, sorted array using the BUBBLE SORT algorithm.
 ********************************************************************************/
 
+func bubbleSort(array: [Int]) -> [Int] {
+    var containerArray: [Int] = []
+    var totalPasses = 0
+    var totalSwaps = 0
+    func sortPass(sortArray: inout [Int]) {
+        print("============= START OF PASS #\(totalPasses) =============") // 15 "=" 
+        print("$ Array before pass: ", sortArray)
+        // sorting code
+        for i in 0...sortArray.count-2 {
+            if(sortArray[i] > sortArray[i+1]) {
+                swapFunc(array: &sortArray, firstIndex: i, secondIndex: i+1)
+                totalSwaps += 1 // global var
+            }        
+        }
+        totalPasses += 1 // global var
+        print("$ Array after pass: ", sortArray)
+        print("============================================") // 46 "="
+    }
+
+    func isAscending(checkArray: [Int]) -> Bool {
+        print("============================================") // 46 "="
+        print("! Checking ", checkArray)
+        for i in 0...checkArray.count-2 {
+            if(checkArray[i] > checkArray[i+1]) {
+                print("$ Array is not sorted!")
+                return false // array is not sorted
+            }
+
+        }
+        print("$ Array is sorted!")
+        return true // array is sorted
+
+    }
+    while(!isAscending(checkArray: containerArray)) {
+        sortPass(sortArray: &containerArray)
+    }
+    if(isAscending) {
+        return containerArray
+    }
+}
 
 /********************************************************************************
 | 3. Define a function to sort an integer array of arbitrary size in ascending order
@@ -53,6 +102,9 @@ srandom(UInt32(time(nil)))
 |    The function should return a new, sorted array using the INSERTION SORT algorithm.
 ********************************************************************************/
 
+func insertionSort(array: [Int]) {
+    
+}
 
 /********************************************************************************
 | 4. Define a function to sort an integer array of arbitrary size in ascending order
@@ -61,6 +113,9 @@ srandom(UInt32(time(nil)))
 |    The function should return a new, sorted array using the SELECTION SORT algorithm.
 ********************************************************************************/
 
+func selectionSort(array: [Int]) {
+    
+}
 
 /********************************************************************************
 | 5. Define a function to sort an integer array of arbitrary size in ascending order
@@ -69,6 +124,9 @@ srandom(UInt32(time(nil)))
 |    The function should return a new, sorted array using the MERGE SORT algorithm.
 ********************************************************************************/
 
+func mergeSort(array: [Int]) {
+    
+}
 
 /********************************************************************************
 | 6.  Define a function which returns a new array of integers.
@@ -85,7 +143,14 @@ srandom(UInt32(time(nil)))
 ********************************************************************************/
 
 
-
+func newArray(arraySize: Int, order: Enum) -> [Int] {
+    if(order == random) {
+    }
+    if(order == ascending) {
+    }
+    if(order == descending) {
+    }
+}
 
 /********************************************************************************
 | 9.  Prompt through standard output a menu where the user selects a sort
