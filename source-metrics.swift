@@ -25,6 +25,19 @@ func random(min:Int, max:Int) -> Int
     return min + random() % range
 }
 
+func intInput() -> Int {
+    var a : Int? = nil
+    while(a == nil) {
+        print("============================================")
+        print("Please input an integer: ", terminator: "")
+        if let line = readLine() {
+            a = Int(line)
+        }
+        print("============================================")
+    }
+    return a!
+}
+
 
 /********************************************************************************
 | Preparations
@@ -72,7 +85,6 @@ func bubbleSort(array: [Int]) -> [Int] {
         print("$ Array after pass: ", sortArray)
         print("============================================") // 46 "="
     }
-
     func isAscending(checkArray: [Int]) -> Bool {
         print("============================================") // 46 "="
         print("! Checking ", checkArray)
@@ -145,10 +157,22 @@ func mergeSort(array: [Int]) {
 
 func newArray(arraySize: Int, order: Enum) -> [Int] {
     if(order == random) {
+        var randomArray: [Int] = []
+        for _ 1...arraySize {
+            randomArray.append(random(min:0, max:(arraySize*2)))
+        }
     }
     if(order == ascending) {
+        var ascendingArray: [Int] = []
+        for _ 1...arraySize {
+            ascendingArray.append(random(min:0, max:(arraySize*2)))
+        }
     }
     if(order == descending) {
+        var descendingArray: [Int] = []
+        for _ 1...arraySize {
+            descendingArray.append(random(min:0, max:(arraySize*2)))
+        }
     }
 }
 
@@ -169,3 +193,43 @@ func newArray(arraySize: Int, order: Enum) -> [Int] {
 |       Print the sorted array
 |
 ********************************************************************************/
+
+/********************************************************************************
+| UI
+********************************************************************************/
+func ui_openingMenu() {
+    print("============================================") // 46 "="
+    print("====== Please select sorting algorithm =====") 
+    print("============================================") // 46 "="
+    print("======     1. Bubble Sort              =====")
+    print("======     2. Insertion Sort           =====")
+    print("======     3. Selection Sort           =====")
+    print("======     4. Merge Sort               =====")
+    print("============================================") // 46 "="
+}
+
+func ui_arraySize() {
+    print("============================================") // 46 "="
+    print("====== Please input the size of array  =====") 
+    print("============================================") // 46 "="
+}
+
+func ui_orderness() {
+    print("============================================") // 46 "="
+    print("======   Please select the orderness   =====") 
+    print("============================================") // 46 "="
+    print("======     1. Ascending                =====")
+    print("======     2. Descending               =====")
+    print("======     3. Random                   =====")
+    print("============================================") // 46 "="
+}
+/********************************************************************************
+| Execution
+********************************************************************************/
+ui_openingMenu()
+intInput()
+
+                
+                
+                
+
