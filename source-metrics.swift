@@ -162,18 +162,21 @@ func newArray(arraySize: Int, order: Int) -> [Int] {
         for _ in 1...arraySize {
             ascendingArray.append(random(min:0, max:(arraySize*2)))
         }
+        return ascendingArray
     }
     if(order == 2) {
         var descendingArray: [Int] = []
         for _ in 1...arraySize {
             descendingArray.append(random(min:0, max:(arraySize*2)))
         }
+        return descendingArray
     }
     if(order == 3) {
         var randomArray: [Int] = []
         for _ in 1...arraySize {
             randomArray.append(random(min:0, max:(arraySize*2)))
         }
+        return randomArray
     }
 }
 
