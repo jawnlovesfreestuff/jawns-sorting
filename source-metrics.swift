@@ -155,23 +155,24 @@ func mergeSort(array: [Int]) {
 ********************************************************************************/
 
 
-func newArray(arraySize: Int, order: Enum) -> [Int] {
-    if(order == random) {
-        var randomArray: [Int] = []
-        for _ 1...arraySize {
-            randomArray.append(random(min:0, max:(arraySize*2)))
-        }
-    }
-    if(order == ascending) {
+func newArray(arraySize: Int, order: Orderness) -> [Int] {
+    
+    if(order == 1) {
         var ascendingArray: [Int] = []
         for _ 1...arraySize {
             ascendingArray.append(random(min:0, max:(arraySize*2)))
         }
     }
-    if(order == descending) {
+    if(order == 2) {
         var descendingArray: [Int] = []
         for _ 1...arraySize {
             descendingArray.append(random(min:0, max:(arraySize*2)))
+        }
+    }
+    if(order == 3) {
+        var randomArray: [Int] = []
+        for _ 1...arraySize {
+            randomArray.append(random(min:0, max:(arraySize*2)))
         }
     }
 }
@@ -227,9 +228,13 @@ func ui_orderness() {
 | Execution
 ********************************************************************************/
 ui_openingMenu()
-intInput()
-
-                
-                
+var in_sortType = intInput()
+ui_arraySize()
+var in_arraySize = intInput()
+ui_orderness()
+var in_orderness = intInput()   
+print("============================================") // 46 "="
+var arrayToSort = newArray(arraySize: Int, order: in_orderness)
+print(arrayToSort)                
                 
 
