@@ -102,7 +102,7 @@ func bubbleSort(array: [Int]) -> [Int] {
     while(!isAscending(checkArray: containerArray)) {
         sortPass(sortArray: &containerArray)
     }
-    if(isAscending) {
+    if(isAscending(checkArray: containerArray)) {
         return containerArray
     }
 }
@@ -155,23 +155,23 @@ func mergeSort(array: [Int]) {
 ********************************************************************************/
 
 
-func newArray(arraySize: Int, order: Orderness) -> [Int] {
+func newArray(arraySize: Int, order: Int) -> [Int] {
     
     if(order == 1) {
         var ascendingArray: [Int] = []
-        for _ 1...arraySize {
+        for _ in 1...arraySize {
             ascendingArray.append(random(min:0, max:(arraySize*2)))
         }
     }
     if(order == 2) {
         var descendingArray: [Int] = []
-        for _ 1...arraySize {
+        for _ in 1...arraySize {
             descendingArray.append(random(min:0, max:(arraySize*2)))
         }
     }
     if(order == 3) {
         var randomArray: [Int] = []
-        for _ 1...arraySize {
+        for _ in 1...arraySize {
             randomArray.append(random(min:0, max:(arraySize*2)))
         }
     }
@@ -228,13 +228,13 @@ func ui_orderness() {
 | Execution
 ********************************************************************************/
 ui_openingMenu()
-var in_sortType = intInput()
+var input_sortType = intInput()
 ui_arraySize()
-var in_arraySize = intInput()
+var input_arraySize = intInput()
 ui_orderness()
-var in_orderness = intInput()   
+var input_orderness = intInput()   
 print("============================================") // 46 "="
-var arrayToSort = newArray(arraySize: Int, order: in_orderness)
+var arrayToSort = newArray(arraySize: input_arraySize, order: input_orderness)
 print(arrayToSort)                
                 
 
