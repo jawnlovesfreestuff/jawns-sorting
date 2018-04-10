@@ -336,6 +336,7 @@ case 1:
     print(bubbleSort(array: arrayToSort))
 case 2:
     print("Insertion Sort")
+    print(insertionSort(array: arrayToSort))
 case 3:
     print("Selection Sort")  
 case 4:
