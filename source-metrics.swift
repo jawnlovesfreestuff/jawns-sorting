@@ -197,8 +197,33 @@ func insertionSort(array: [Int]) -> [Int]{
 |    The function should return a new, sorted array using the SELECTION SORT algorithm.
 ********************************************************************************/
 
-func selectionSort(array: [Int]) {
+func selectionSort(array: [Int]) -> [Int] {
+    var containerArray: [Int] = []
+    var lowestNumber = 0
+    func sortPass(sortArray: inout [Int]) {
+        // sorting code
+        for i in 0...sortArray.count-1 {
+            if(lowestNumber > sortArray[i]) {
+                lowestNumber = sortArray[i]
+            }        
+        }
+        containerArray.append(lowestNumber)
+        print("Container Array: /(containerArray)")
+    }
     
+    func isAscending(checkArray: [Int]) -> Bool {
+        for i in 0...checkArray.count-2 {
+            if(checkArray[i] > checkArray[i+1]) {
+                return false // array is not sorted
+            }
+        }
+        return true // array is sorted
+
+    }
+    while(!isAscending(checkArray: containerArray)) {
+        sortPass(sortArray: &containerArray)
+    }
+    return containerArray
 }
 
 /********************************************************************************
@@ -339,6 +364,7 @@ case 2:
     print(insertionSort(array: arrayToSort))
 case 3:
     print("Selection Sort")  
+    print(selectionSort(array: arrayToSort))
 case 4:
     print("Merge Sort")    
 default:
