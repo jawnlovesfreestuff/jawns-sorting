@@ -221,7 +221,7 @@ func selectionSort(array: [Int]) -> [Int] {
 
     }
     while(!isAscending(checkArray: containerArray)) {
-        sortPass(sortArray: &containerArray)
+        sortPass(sortArray: array)
     }
     return containerArray
 }
