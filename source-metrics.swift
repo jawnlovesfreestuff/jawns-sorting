@@ -200,7 +200,7 @@ func insertionSort(array: [Int]) -> [Int]{
 func selectionSort(array: [Int]) -> [Int] {
     var containerArray: [Int] = []
     var lowestNumber = 0
-    func sortPass(sortArray: inout [Int]) {
+    func sortPass(sortArray: [Int]) {
         // sorting code
         for i in 0...sortArray.count-1 {
             if(lowestNumber > sortArray[i]) {
