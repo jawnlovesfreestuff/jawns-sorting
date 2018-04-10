@@ -38,7 +38,6 @@ func intInput() -> Int {
     return a!
 }
 
-
 /********************************************************************************
 | Preparations
 ********************************************************************************/
@@ -168,7 +167,7 @@ func newArray(arraySize: Int, order: Int) -> [Int] {
         for _ in 1...arraySize {
             descendingArray.append(random(min:0, max:(arraySize*2)))
         }
-        return descendingArray
+        return bubbleSort(array: descendingArray).reverse()
     }
     if(order == 3) {
         var randomArray: [Int] = []
