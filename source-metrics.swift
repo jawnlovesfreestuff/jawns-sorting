@@ -197,7 +197,7 @@ func insertionSort(array: [Int]) -> [Int]{
 |    The function should return a new, sorted array using the SELECTION SORT algorithm.
 ********************************************************************************/
 
-func selectionSort(array: [Int]) -> [Int] {
+func selectionSort(array: [Int]) {
     
 }
 
@@ -208,7 +208,7 @@ func selectionSort(array: [Int]) -> [Int] {
 |    The function should return a new, sorted array using the MERGE SORT algorithm.
 ********************************************************************************/
 
-func mergeSort(array: [Int]) -> [Int] {
+func mergeSort(array: [Int]) {
     
 }
 
