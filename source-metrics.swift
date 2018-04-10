@@ -203,7 +203,7 @@ func selectionSort(array: [Int]) -> [Int] {
     var lastNumber = 0
     func sortPass(sortArray: [Int]) {
         // sorting code
-        for i in 0...sortArray.count-1 { // add lowest number to output array
+        for _ in 0...sortArray.count-1 { // add lowest number to output array
             for a in 0...sortArray.count-1 { // run thru input array to find lowest number
                 if(lowestNumber > sortArray[a]) {
                     if(lowestNumber != lastNumber) {
