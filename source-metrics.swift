@@ -167,7 +167,7 @@ func newArray(arraySize: Int, order: Int) -> [Int] {
         for _ in 1...arraySize {
             descendingArray.append(random(min:0, max:(arraySize*2)))
         }
-        return bubbleSort(array: descendingArray).reverse()
+        return bubbleSort(array: descendingArray) // reverse this
     }
     if(order == 3) {
         var randomArray: [Int] = []
