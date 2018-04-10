@@ -38,6 +38,12 @@ func intInput() -> Int {
     return a!
 }
 
+func reverseArray(array: [Int]) -> [Int] {
+    if array.isEmpty { print("Your array is empty!") }
+    if (array.count < 2) { print("Your array is too small!") }
+    var containerArray: [Int] = [] 
+}
+
 /********************************************************************************
 | Preparations
 ********************************************************************************/
