@@ -201,6 +201,10 @@ func newArray(arraySize: Int, order: Int) -> [Int] {
 /********************************************************************************
 | UI
 ********************************************************************************/
+func ui_clearScreen() {
+    for _ in 0...70 { print(""); }
+}
+
 func ui_openingMenu() {
     print("============================================") // 46 "="
     print("====== Please select sorting algorithm =====") 
@@ -228,12 +232,10 @@ func ui_orderness() {
     print("============================================") // 46 "="
 }
 
-func ui_clearScreen() {
-    for _ in 1...50 { print(""); }
-}
 /********************************************************************************
 | Execution
 ********************************************************************************/
+// Options 
 ui_openingMenu()
 var input_sortType = intInput()
 ui_arraySize()
@@ -241,9 +243,13 @@ var input_arraySize = intInput()
 ui_orderness()
 var input_orderness = intInput()   
 print("============================================") // 46 "="
+// Arrays
 var arrayToSort = newArray(arraySize: input_arraySize, order: input_orderness)
 ui_clearScreen()
-print("Array to be sorted: \(arrayToSort)")
+print("============================================") // 46 "="
+print("======       Array to be sorted        =====") 
+print("============================================") // 46 "="
+print("\(arrayToSort)")
 
                 
 
