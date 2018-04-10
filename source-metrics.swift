@@ -84,8 +84,8 @@ func bubbleSort(array: [Int]) -> [Int] {
     var totalPasses = 0
     var totalSwaps = 0
     func sortPass(sortArray: inout [Int]) {
-        print("============= START OF PASS #\(totalPasses) =============") // 15 "=" 
-        print("$ Array before pass: ", sortArray)
+        //print("============= START OF PASS #\(totalPasses) =============") // 15 "=" 
+        //print("$ Array before pass: ", sortArray)
         // sorting code
         for i in 0...sortArray.count-2 {
             if(sortArray[i] > sortArray[i+1]) {
@@ -94,12 +94,12 @@ func bubbleSort(array: [Int]) -> [Int] {
             }        
         }
         totalPasses += 1 // global var
-        print("$ Array after pass: ", sortArray)
-        print("============================================") // 46 "="
+        //print("$ Array after pass: ", sortArray)
+        //print("============================================") // 46 "="
     }
     func isAscending(checkArray: [Int]) -> Bool {
-        print("============================================") // 46 "="
-        print("! Checking ", checkArray)
+        //print("============================================") // 46 "="
+        //print("! Checking ", checkArray)
         for i in 0...checkArray.count-2 {
             if(checkArray[i] > checkArray[i+1]) {
                 print("$ Array is not sorted!")
@@ -107,7 +107,7 @@ func bubbleSort(array: [Int]) -> [Int] {
             }
 
         }
-        print("$ Array is sorted!")
+        //print("$ Array is sorted!")
         return true // array is sorted
 
     }
