@@ -220,7 +220,7 @@ func selectionSort(array: [Int]) -> [Int] {
         return true // array is sorted
 
     }
-    while(!isAscending(checkArray: containerArray)) {
+    while(containerArray.count != array.count)) {
         sortPass(sortArray: array)
     }
     return containerArray
