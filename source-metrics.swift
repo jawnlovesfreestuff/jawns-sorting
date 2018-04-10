@@ -161,7 +161,7 @@ func newArray(arraySize: Int, order: Int) -> [Int] {
         for _ in 1...arraySize {
             ascendingArray.append(random(min:0, max:(arraySize*2)))
         }
-        return bubbleSort(array: &ascendingArray)
+        return bubbleSort(array: ascendingArray)
     }
     if(order == 2) {
         var descendingArray: [Int] = []
