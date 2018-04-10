@@ -68,7 +68,7 @@ func swapFunc(array: inout [Int], firstIndex: Int, secondIndex: Int) {
 ********************************************************************************/
 
 func bubbleSort(array: [Int]) -> [Int] {
-    var containerArray: [Int] = []
+    var containerArray: [Int] = array
     var totalPasses = 0
     var totalSwaps = 0
     func sortPass(sortArray: inout [Int]) {
