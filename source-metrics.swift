@@ -48,6 +48,7 @@ func reverseArray(array: [Int]) -> [Int] {
         arraySize -= 1
     }
     print("Array reversed!")
+    return containerArray
 }
 
 /********************************************************************************
