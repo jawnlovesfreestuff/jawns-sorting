@@ -272,6 +272,7 @@ print("============================================") // 46 "="
 switch input_sortType {
 case 1:
     print("Bubble Sort")
+    bubbleSort(array: arrayToSort)
 case 2:
     print("Insertion Sort")
 case 3:
