@@ -198,7 +198,7 @@ func insertionSort(array: [Int]) -> [Int]{
 ********************************************************************************/
 
 func selectionSort(array: [Int]) -> [Int] {
-    var containerArray: [Int]
+    var containerArray = [Int]()
     var lowestNumber = 0
     var lastNumber = 0
     func sortPass(sortArray: [Int]) {
@@ -212,7 +212,7 @@ func selectionSort(array: [Int]) -> [Int] {
                 }        
             }
             lastNumber = lowestNumber
-            containerArray[i] = lowestNumber
+            containerArray.append(lowestNumber)
         }
         print("Container Array: \(containerArray)")
     }
