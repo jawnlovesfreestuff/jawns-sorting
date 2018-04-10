@@ -125,7 +125,7 @@ func bubbleSort(array: [Int]) -> [Int] {
 |    The function should return a new, sorted array using the INSERTION SORT algorithm.
 ********************************************************************************/
 
-func insertionSort(array: [Int]) {
+func insertionSort(array: [Int]) -> [Int]{
     var containerArray: [Int] = array
     var totalPasses = 0
     var totalSwaps = 0
@@ -197,7 +197,7 @@ func insertionSort(array: [Int]) {
 |    The function should return a new, sorted array using the SELECTION SORT algorithm.
 ********************************************************************************/
 
-func selectionSort(array: [Int]) {
+func selectionSort(array: [Int]) -> [Int] {
     
 }
 
@@ -208,7 +208,7 @@ func selectionSort(array: [Int]) {
 |    The function should return a new, sorted array using the MERGE SORT algorithm.
 ********************************************************************************/
 
-func mergeSort(array: [Int]) {
+func mergeSort(array: [Int]) -> [Int] {
     
 }
 
