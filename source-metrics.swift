@@ -198,17 +198,23 @@ func insertionSort(array: [Int]) -> [Int]{
 ********************************************************************************/
 
 func selectionSort(array: [Int]) -> [Int] {
-    var containerArray: [Int] = []
+    var containerArray: [Int]
     var lowestNumber = 0
+    var lastNumber = 0
     func sortPass(sortArray: [Int]) {
         // sorting code
-        for i in 0...sortArray.count-1 {
-            if(lowestNumber > sortArray[i]) {
-                lowestNumber = sortArray[i]
-            }        
+        for i in 0...sortArray.count-1 { // add lowest number to output array
+            for a in 0...sortArray.count-1 { // run thru input array to find lowest number
+                if(lowestNumber > sortArray[a]) {
+                    if(lowestNumber != lastNumber) {
+                        lowestNumber = sortArray[a]
+                    }
+                }        
+            }
+            lastNumber = lowestNumber
+            containerArray[i] = lowestNumber
         }
-        containerArray.append(lowestNumber)
-        print("Container Array: /(containerArray)")
+        print("Container Array: \(containerArray)")
     }
     
     func isAscending(checkArray: [Int]) -> Bool {
