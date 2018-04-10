@@ -271,13 +271,13 @@ print("============================================") // 46 "="
 
 switch input_sortType {
 case 1:
-    print("The first letter of the alphabet")
+    print("Bubble Sort")
 case 2:
-    print("The last letter of the alphabet")
+    print("Insertion Sort")
 case 3:
-    print("The last letter of the alphabet")  
-case 2:
-    print("The last letter of the alphabet")    
+    print("Selection Sort")  
+case 4:
+    print("Merge Sort")    
 default:
     print("Invalid sort")
                 
