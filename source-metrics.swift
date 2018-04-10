@@ -249,7 +249,10 @@ func ui_orderness() {
 ********************************************************************************/
 // Options 
 ui_openingMenu()
-var input_sortType = intInput()
+var input_sortType = 0
+while(input_sortType < 1 || input_sortType > 4) {
+    input_sortType = intInput()
+}
 ui_arraySize()
 var input_arraySize = intInput()
 ui_orderness()
@@ -262,6 +265,20 @@ print("============================================") // 46 "="
 print("======       Array to be sorted        =====") 
 print("============================================") // 46 "="
 print("\(arrayToSort)")
+print("============================================") // 46 "="
+print("======          Array sorted           =====") 
+print("============================================") // 46 "="
 
+switch input_sortType {
+case 1:
+    print("The first letter of the alphabet")
+case 2:
+    print("The last letter of the alphabet")
+case 3:
+    print("The last letter of the alphabet")  
+case 2:
+    print("The last letter of the alphabet")    
+default:
+    print("Invalid sort")
                 
 
