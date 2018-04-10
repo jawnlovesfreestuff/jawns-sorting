@@ -239,6 +239,7 @@ ui_orderness()
 var input_orderness = intInput()   
 print("============================================") // 46 "="
 var arrayToSort = newArray(arraySize: input_arraySize, order: input_orderness)
-print(arrayToSort)                
+print("Array to be sorted: \(arrayToSort)")
+
                 
 
