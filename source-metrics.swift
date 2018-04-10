@@ -42,7 +42,7 @@ func reverseArray(array: [Int]) -> [Int] {
     if array.isEmpty { print("Your array is empty!") }
     if (array.count < 2) { print("Your array is too small!") }
     var containerArray: [Int] = [] 
-    var arraySize = array.count
+    var arraySize = array.count-1
     while(arraySize >= 0) {
         containerArray.append(array[arraySize])
         arraySize -= 1
