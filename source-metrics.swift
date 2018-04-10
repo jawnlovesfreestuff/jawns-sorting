@@ -132,8 +132,8 @@ func insertionSort(array: [Int]) -> [Int]{
     var pointerPos = 1
 
     func sortPassByPointer(sortArray: inout [Int], pointerPos: Int) {
-        print("============= START OF PASS #\(totalPasses) =============") // 15 "=" 
-        print("$ Array before pass: ", sortArray)
+        //print("============= START OF PASS #\(totalPasses) =============") // 15 "=" 
+        //print("$ Array before pass: ", sortArray)
         // sorting code
         for i in 0...sortArray.count-2 {
             if(sortArray[i] > sortArray[i+1]) {
@@ -142,44 +142,44 @@ func insertionSort(array: [Int]) -> [Int]{
             }        
         }
         totalPasses += 1 // global var
-        print("$ Array after pass: ", sortArray)
-        print("============================================") // 46 "="
+        //print("$ Array after pass: ", sortArray)
+        //print("============================================") // 46 "="
     }
 
     func isAscendingTotal(checkArray: [Int]) -> Bool {
-        print("============================================") // 46 "="
-        print("! Checking ", checkArray)
+        //print("============================================") // 46 "="
+        //print("! Checking ", checkArray)
         for i in 0...checkArray.count-2 {
             if(checkArray[i] > checkArray[i+1]) {
-                print("$ Array is not sorted!")
+                //print("$ Array is not sorted!")
                 return false // array is not sorted
             }
 
         }
-        print("$ Array is sorted!")
+        //print("$ Array is sorted!")
         return true // array is sorted
     }
 
     func isAscendingToPointer(checkArray: [Int]) -> Bool {
-        print("============================================") // 46 "="
-        print("! Checking ", checkArray)
+        //print("============================================") // 46 "="
+        //print("! Checking ", checkArray)
         for i in 0...pointerPos-1 {
             if(checkArray[i] > checkArray[i+1]) {
-                print("$ Array to \(pointerPos) is not sorted!")
+                //print("$ Array to \(pointerPos) is not sorted!")
                 return false // array is not sorted
             }
         }
-            print("$ Array to \(pointerPos) is sorted!")
+            //print("$ Array to \(pointerPos) is sorted!")
             return true // array is sorted
         }
 
     func pointerIncrement(sortArray: inout[Int]) { // also sorts
         if(isAscendingToPointer(checkArray: sortArray)) {
             pointerPos += 1
-            print("PointerPos: \(pointerPos)")
+            //print("PointerPos: \(pointerPos)")
         } 
         else {
-            print("Pointer isn't sorted!")
+            //print("Pointer isn't sorted!")
         }
     }
 
