@@ -199,23 +199,24 @@ func insertionSort(array: [Int]) -> [Int]{
 
 func selectionSort(array: [Int]) -> [Int] {
     var containerArray = [Int]()
+    //var excludeArray = [Int]()
     //var lastNumber = 0
+    func returnLowest(sortArray: [Int], excludeArray: [Int]) {
+        var lowestNumber = -1
+        for index in 0...sortArray.count-1 {
+            if(lowestNumber == -1) {
+                lowestNumber = sortArray[index]
+            }
+            else if(sortArray[index] < lowestNumber) {
+                
+            }
+        }
+    }
+    
     func sortPass(sortArray: [Int]) {
         // sorting code
         for a in 0...sortArray.count-1 { // outer loop
-            var lowestNumber = -1 // reset lowest number everytime
-            for index in 0...sortArray.count-1 { // inner loop
-                if(lowestNumber == -1) {
-                    lowestNumber = sortArray[index]
-                }
-                else if(sortArray[index] < lowestNumber) {
-                    if(lowestNumber != containerArray[a]) {
-                        lowestNumber = sortArray[index]
-                    }
-                }
-                
-            }
-            containerArray[a] = lowestNumber
+           
         }
         print("Container Array: \(containerArray)") // after outer loop
     }
