@@ -199,19 +199,16 @@ func insertionSort(array: [Int]) -> [Int]{
 
 func selectionSort(array: [Int]) -> [Int] {
     var containerArray = [Int]()
-    var lowestNumber = 0
-    var lastNumber = 0
+    //var lastNumber = 0
     func sortPass(sortArray: [Int]) {
         // sorting code
-        for _ in 0...sortArray.count-1 { // add lowest number to output array
+        for x in 0...sortArray.count-1 { // add lowest number to output array
+            var lowestNumber = sortArray.count*999
             for a in 0...sortArray.count-1 { // run thru input array to find lowest number
-                if(lowestNumber > sortArray[a]) {
-                    if(lowestNumber != lastNumber) {
-                        lowestNumber = sortArray[a]
-                    }
+                if(sortArray[a] < lowestNumber) {                   
+                    lowestNumber = sortArray[a]
                 }        
             }
-            lastNumber = lowestNumber
             containerArray.append(lowestNumber)
         }
         print("Container Array: \(containerArray)")
