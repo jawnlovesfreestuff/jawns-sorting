@@ -201,24 +201,23 @@ func selectionSort(array: [Int]) -> [Int] {
     var containerArray = array
     func sortPass(sortArray: [Int]) {
         // sorting code
-        for a in 0...sortArray.count-2 { // outer loop
-            var lowestIndex = a
-            for index in a+1...sortArray.count-1 { // inner loop 
+        for outer in 0...sortArray.count-2 { // outer loop
+            var lowestIndex = outer
+            for index in outer+1...sortArray.count-1 { // inner loop 
                if(sortArray[index] < sortArray[lowestIndex]) {
                   lowestIndex = index
                }
             }
-            print("a: \(a)")
+            print("outer: \(outer)")
             print("lowestIndex: \(lowestIndex)")
-            if(a != lowestIndex) {
-                swapFunc(array: &containerArray, firstIndex: a, secondIndex: lowestIndex)
+            if(outer != lowestIndex) {
+                swapFunc(array: &containerArray, firstIndex: outer, secondIndex: lowestIndex)
             }
-            
         }
         print("Container Array: \(containerArray)") // after outer loop
     }
     
-    sortPass(sortArray: array)
+    sortPass(sortArray: containerArray)
     
     /*
     while(!isAscending(checkArray: containerArray)) {
