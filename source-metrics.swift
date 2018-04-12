@@ -241,21 +241,13 @@ func mergeSort(array: [Int]) -> [Int] {
                 containerArray.append(rightArray[rightIndex])
                 rightIndex += 1
             }
-            }
-            while leftIndex < leftArray.count {
-                containerArray.append(leftArray[leftIndex])
-                leftIndex += 1
-            }
-            while rightIndex < rightArray.count {
-                containerArray.append(rightArray[rightIndex])
-                rightIndex += 1
         }
         return containerArray
     }
     let middleIndex = array.count/2
     
-    let leftArray = mergeSort(array: Array(array[0..<middleIndex]))
-    let rightArray = mergeSort(array: Array(array[middleIndex..<array.count]))
+    let leftArray = merge(array: Array(array[0..<middleIndex]))
+    let rightArray = merge(array: Array(array[middleIndex..<array.count]))
     
     /*
     let leftArray = Array(array[0..<middleIndex])
