@@ -288,13 +288,15 @@ func newArray(arraySize: Int, order: Int) -> [Int] {
             if(a == 1) {
                 let randomNum = random(min:lastNumber, max:(arraySize*2))
                 lastNumber = randomNum
+                ascendingArray.append(randomNum)
             }
             else {
                 let randomNum = random(min:lastNumber, max:(arraySize*20))
                 lastNumber = randomNum
+                ascendingArray.append(randomNum)
             }
             
-            ascendingArray.append(randomNum)
+            
         }
         return ascendingArray
     }
@@ -304,12 +306,15 @@ func newArray(arraySize: Int, order: Int) -> [Int] {
         for a in 1...arraySize {
             if(a == 1) {
                 let randomNum = random(min:lastNumber, max:(arraySize*2))
+                lastNumber = randomNum
+                descendingArray.append(randomNum)
             }
             else {
                 let randomNum = random(min:lastNumber, max:(arraySize*20))
+                lastNumber = randomNum
+                descendingArray.append(randomNum)
             }
-            lastNumber = randomNum
-            descendingArray.append(randomNum)
+            
         }
         return reverseArray(array: descendingArray) // reverse this
     }
