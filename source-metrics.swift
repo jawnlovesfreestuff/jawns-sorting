@@ -199,51 +199,24 @@ func insertionSort(array: [Int]) -> [Int]{
 
 func selectionSort(array: [Int]) -> [Int] {
     var containerArray = array
-    /*
-    func sortPass(sortArray: inout [Int]) {
-
-        for outer in 0...sortArray.count-2 { // outer loop
-            var lowestIndex = outer
-            for index in outer+1...sortArray.count-1 { // inner loop 
-               if(sortArray[index] < sortArray[lowestIndex]) {
-                  lowestIndex = index
-               }
-            }
-            if(outer != lowestIndex) {
-                swapFunc(array: &sortArray, firstIndex: outer, secondIndex: lowestIndex)
+    
+    for outer in 0 ... containerArray.count-2 {
+        // Find the lowest value in the rest of the array.
+        var lowestIndex = outer
+        for inner in outer+1 ... containerArray.count-1 {
+            if (containerArray[inner] < containerArray[lowestIndex]) {
+                lowestIndex = inner
             }
         }
-        print("Container Array: \(containerArray)") // after outer loop
-    }
-    */
-    
-    func sortPass(sortArray:[Int]) -> [Int] {
-        var a = sortArray
-        for x in 0 ..< a.count - 1 {
-            // Find the lowest value in the rest of the array.
-            var lowest = x
-            for y in x + 1 ..< a.count {
-                if (a[y] < a[lowest]) {
-                    lowest = y
-                }
-            }
 
-            // Swap the lowest value with the current array index.
-            if x != lowest {
-                swapFunc(array: &a, firstIndex:x, secondIndex:lowest)
-            }
+        // Swap the lowest value with the current array index.
+        if outer != lowest {
+            swapFunc(array: &containerArray, firstIndex: outer, secondIndex: lowestIndex)
         }
-        return a
     }
-    
+
     return sortPass(sortArray: containerArray)
-    
-    /*
-    while(!isAscending(checkArray: containerArray)) {
-        sortPass(sortArray: array)
-    }
-    */
-    return containerArray
+
 }
 
 /********************************************************************************
