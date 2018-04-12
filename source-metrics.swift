@@ -204,11 +204,11 @@ func selectionSort(array: [Int]) -> [Int] {
         // sorting code
         for a in 0...sortArray.count-1 { // outer loop
             var lowestNumber = -1 // reset lowest number everytime
-            for index in a...sortArray.count-1 { // inner loop
+            for index in 0...sortArray.count-1 { // inner loop
                 if(lowestNumber == -1) {
                     lowestNumber = sortArray[index]
                 }
-                else if(sortArray[index] < lowestNumber) {
+                else if(sortArray[index] < lowestNumber && lowestNumber != containerArray[a]) {
                     lowestNumber = sortArray[index]
                 }
                 
