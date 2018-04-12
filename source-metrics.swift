@@ -219,49 +219,50 @@ func selectionSort(array: [Int]) -> [Int] {
 |    altered.
 |    The function should return a new, sorted array using the MERGE SORT algorithm.
 ********************************************************************************/
-func merge(leftArray: [Int], rightArray: [Int]) -> [Int] { // takes in two arrays and returns one sorted
-  var leftIndex = 0
-  var rightIndex = 0
-  var containerArray = [Int]()
-  while(leftIndex < leftArray.count && rightIndex < rightArray.count) {
-    if leftArray[leftIndex] < rightArray[rightIndex] {
-      containerArray.append(leftArray[leftIndex])
-      leftIndex += 1
-    } 
-    else if leftArray[leftIndex] > rightArray[rightIndex] {
-      containerArray.append(rightArray[rightIndex])
-      rightIndex += 1
-    } 
-    else {
-      containerArray.append(leftArray[leftIndex])
-      leftIndex += 1
-      containerArray.append(rightArray[rightIndex])
-      rightIndex += 1
-    }
-  }
-  while leftIndex < leftArray.count {
-    containerArray.append(leftArray[leftIndex])
-    leftIndex += 1
-  }
-  while rightIndex < rightArray.count {
-    containerArray.append(rightArray[rightIndex])
-    rightIndex += 1
-  }
-  return containerArray
-}
+
 
 func mergeSort(array: [Int]) -> [Int] {
+    func merge(leftArray: [Int], rightArray: [Int]) -> [Int] { // takes in two arrays and returns one sorted
+        var leftIndex = 0
+        var rightIndex = 0
+        var containerArray = [Int]()
+        while(leftIndex < leftArray.count && rightIndex < rightArray.count) {
+            if leftArray[leftIndex] < rightArray[rightIndex] {
+                containerArray.append(leftArray[leftIndex])
+                leftIndex += 1
+            } 
+            else if leftArray[leftIndex] > rightArray[rightIndex] {
+                containerArray.append(rightArray[rightIndex])
+                rightIndex += 1
+            } 
+            else {
+                containerArray.append(leftArray[leftIndex])
+                leftIndex += 1
+                containerArray.append(rightArray[rightIndex])
+                rightIndex += 1
+            }
+            }
+            while leftIndex < leftArray.count {
+                containerArray.append(leftArray[leftIndex])
+                leftIndex += 1
+            }
+            while rightIndex < rightArray.count {
+                containerArray.append(rightArray[rightIndex])
+                rightIndex += 1
+        }
+        return containerArray
+    }
     let middleIndex = array.count/2
-    /*
+    
     let leftArray = mergeSort(array: Array(array[0..<middleIndex]))
     let rightArray = mergeSort(array: Array(array[middleIndex..<array.count]))
-    */
+    
+    /*
     let leftArray = Array(array[0..<middleIndex])
     let rightArray = Array(array[middleIndex..<array.count])
+    */
     return merge(leftArray: leftArray, rightArray: rightArray) 
-    
 }
-
 
 
 /********************************************************************************
