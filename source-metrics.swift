@@ -287,11 +287,13 @@ func newArray(arraySize: Int, order: Int) -> [Int] {
         for a in 1...arraySize-1 {
             if(a == 1) {
                 let randomNum = random(min:lastNumber, max:(arraySize*2))
+                lastNumber = randomNum
             }
             else {
                 let randomNum = random(min:lastNumber, max:(arraySize*20))
+                lastNumber = randomNum
             }
-            lastNumber = randomNum
+            
             ascendingArray.append(randomNum)
         }
         return ascendingArray
