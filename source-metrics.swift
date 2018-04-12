@@ -68,8 +68,8 @@ func swapFunc(array: inout [Int], firstIndex: Int, secondIndex: Int) {
     let tempArray = array
     array[firstIndex] = tempArray[secondIndex]
     array[secondIndex] = tempArray[firstIndex]
-    print("! Swapped \(array[firstIndex]) with \(array[secondIndex])!")
-    print("$ Current array state: ", array)
+    //print("! Swapped \(array[firstIndex]) with \(array[secondIndex])!")
+    //print("$ Current array state: ", array)
 }
 
 /********************************************************************************
@@ -201,7 +201,7 @@ func selectionSort(array: [Int]) -> [Int] {
     var containerArray = array
     func sortPass(sortArray: [Int]) {
         // sorting code
-        for a in 0...sortArray.count-1 { // outer loop
+        for a in 0...sortArray.count-2 { // outer loop
             var lowestIndex = a
             for index in 0...sortArray.count-1 { // inner loop 
                if(sortArray[index] < sortArray[lowestIndex]) {
