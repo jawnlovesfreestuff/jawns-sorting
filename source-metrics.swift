@@ -198,20 +198,10 @@ func insertionSort(array: [Int]) -> [Int]{
 ********************************************************************************/
 
 func selectionSort(array: [Int]) -> [Int] {
-    var containerArray = [Int]()
-    
-    func checkArray(array: [Int], number: Int) -> Bool {
-        for index in 0...array.count-1 {
-            if(number == array[index]) {
-                return true // the number is in the array
-            }
-        }
-        return false // the number is not in the array
-    }
-    
+    var containerArray = array
     func sortPass(sortArray: [Int]) {
         // sorting code
-        for a in 0...sortArray.count-2 { // outer loop
+        for a in 0...sortArray.count-1 { // outer loop
             var lowestIndex = a
             for index in 0...sortArray.count-1 { // inner loop 
                if(sortArray[index] < sortArray[lowestIndex]) {
@@ -221,22 +211,13 @@ func selectionSort(array: [Int]) -> [Int] {
             print("a: \(a)")
             print("lowestIndex: \(lowestIndex)")
             if(a != lowestIndex) {
-                containerArray.append(sortArray[lowestIndex])
+                swapFunc(array: containerArray, firstIndex: a, secondIndex: lowestIndex)
             }
             
         }
         print("Container Array: \(containerArray)") // after outer loop
     }
     
-    func isAscending(checkArray: [Int]) -> Bool {
-        for i in 0...checkArray.count-2 {
-            if(checkArray[i] > checkArray[i+1]) {
-                return false // array is not sorted
-            }
-        }
-        return true // array is sorted
-
-    }
     sortPass(sortArray: array)
     
     /*
