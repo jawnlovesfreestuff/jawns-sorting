@@ -199,24 +199,18 @@ func insertionSort(array: [Int]) -> [Int]{
 
 func selectionSort(array: [Int]) -> [Int] {
     var containerArray = array
-    
     for outer in 0 ... containerArray.count-2 {
-        // Find the lowest value in the rest of the array.
         var lowestIndex = outer
         for inner in outer+1 ... containerArray.count-1 {
             if (containerArray[inner] < containerArray[lowestIndex]) {
                 lowestIndex = inner
             }
         }
-
-        // Swap the lowest value with the current array index.
         if outer != lowestIndex {
             swapFunc(array: &containerArray, firstIndex: outer, secondIndex: lowestIndex)
         }
     }
-
     return containerArray
-
 }
 
 /********************************************************************************
