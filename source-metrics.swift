@@ -211,7 +211,7 @@ func selectionSort(array: [Int]) -> [Int] {
             print("a: \(a)")
             print("lowestIndex: \(lowestIndex)")
             if(a != lowestIndex) {
-                swapFunc(array: containerArray, firstIndex: a, secondIndex: lowestIndex)
+                swapFunc(array: &containerArray, firstIndex: a, secondIndex: lowestIndex)
             }
             
         }
