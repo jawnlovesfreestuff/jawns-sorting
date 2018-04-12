@@ -200,22 +200,29 @@ func insertionSort(array: [Int]) -> [Int]{
 func selectionSort(array: [Int]) -> [Int] {
     var containerArray = [Int]()
     var lastNumberIndex = 0
+    
+    func checkArray(array: [Int], number: Int) -> Bool {
+        for index in 0...array.count-1 {
+            if(number == array[index]) {
+                return true // the number is in the array
+            }
+        }
+        return false // the number is not in the array
+    }
+    
     func sortPass(sortArray: [Int]) {
         // sorting code
         for a in 0...sortArray.count-1 { // outer loop
-           var lowestNumber = -1
-            for index in 0...sortArray.count-1 {
-                if(lowestNumber == -1) {
-                    lowestNumber = sortArray[index]
-                }
-                else if(sortArray[index] < lowestNumber) {
-                    if(sortArray[index] != containerArray[lastNumberIndex]) {
-                        lowestNumber = sortArray[index]
-                    }
-                }
+            var lowestNumber = -1
+            for index in 0...sortArray.count-1 { // inner loop 
+               if(sortArray[index] < lowestNumber && !checkArray(array: containerArray, number:lowestNumber)) {
+                   lowestNumber = sortArray[index]
+               }
+               else {
+                   lowestNumber = sortArray[index]
+               }
             }
             containerArray.append(lowestNumber)
-            lastNumberIndex += 1
         }
         print("Container Array: \(containerArray)") // after outer loop
     }
