@@ -268,8 +268,8 @@ func merge(leftArray: [Int], rightArray: [Int]) -> [Int] { // takes in two array
 
 func mergeSort(array: [Int]) -> [Int] {
     let middleIndex = array.count/2
-    let leftArray = mergeSort(array: array[0..<middleIndex])
-    let rightArray = mergeSort(array: array[middleIndex..<array.count])
+    let leftArray = mergeSort(array: Array(array[0..<middleIndex]))
+    let rightArray = mergeSort(array: Array(array[middleIndex..<array.count]))
     return merge(leftArray: leftArray, rightArray: rightArray) 
 }
 
