@@ -103,7 +103,7 @@ func bubbleSort(array: [Int]) -> [Int] {
         for i in 0...checkArray.count-2 {
             if(checkArray[i] > checkArray[i+1]) {
                 //print("$ Array is not sorted!")
-                return false // array is not sorted
+                return false // array is not sorted 
             }
 
         }
@@ -199,7 +199,6 @@ func insertionSort(array: [Int]) -> [Int]{
 
 func selectionSort(array: [Int]) -> [Int] {
     var containerArray = [Int]()
-    var lastNumberIndex = 0
     
     func checkArray(array: [Int], number: Int) -> Bool {
         for index in 0...array.count-1 {
@@ -212,17 +211,17 @@ func selectionSort(array: [Int]) -> [Int] {
     
     func sortPass(sortArray: [Int]) {
         // sorting code
-        for a in 0...sortArray.count-1 { // outer loop
-            var lowestNumber = -1
+        for a in 0...sortArray.count-2 { // outer loop
+            var lowestIndex = a
             for index in 0...sortArray.count-1 { // inner loop 
-               if(sortArray[index] < lowestNumber && !checkArray(array: containerArray, number:lowestNumber)) {
-                   lowestNumber = sortArray[index]
-               }
-               else {
-                   lowestNumber = sortArray[index]
+               if(sortArray[index] < sortArray[lowest]) {
+                  lowestIndex = index
                }
             }
-            containerArray.append(lowestNumber)
+            if(a != lowest) {
+                containerArray.append(sortArray[lowestIndex])
+            }
+            
         }
         print("Container Array: \(containerArray)") // after outer loop
     }
