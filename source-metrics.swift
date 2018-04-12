@@ -202,7 +202,7 @@ func selectionSort(array: [Int]) -> [Int] {
     //var lastNumber = 0
     func sortPass(sortArray: [Int]) {
         // sorting code
-        for x in 0...sortArray.count-1 { // add lowest number to output array
+        for _ in 0...sortArray.count-1 { // add lowest number to output array
             var lowestNumber = sortArray.count*999
             for a in 0...sortArray.count-1 { // run thru input array to find lowest number
                 if(sortArray[a] < lowestNumber) {                   
@@ -268,8 +268,8 @@ func merge(leftArray: [Int], rightArray: [Int]) -> [Int] { // takes in two array
 
 func mergeSort(array: [Int]) -> [Int] {
     let middleIndex = array.count/2
-    let leftArray = mergeSort(Array(array[0..<middleIndex]))
-    let rightArray = mergeSort(Array(array[middleIndex..<array.count]))
+    let leftArray = mergeSort(array: array[0..<middleIndex])
+    let rightArray = mergeSort(array: array[middleIndex..<array.count])
     return merge(leftArray: leftArray, rightArray: rightArray) 
 }
 
