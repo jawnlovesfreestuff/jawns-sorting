@@ -283,10 +283,13 @@ func newArray(arraySize: Int, order: Int) -> [Int] {
     
     if(order == 1) {
         var ascendingArray: [Int] = []
+        var lastNumber = 0;
         for _ in 1...arraySize {
-            ascendingArray.append(random(min:0, max:(arraySize*2)))
+            randomNum = random(min:lastNumber, max:(arraySize*2))
+            ascendingArray.append(randomNum)
+            lastNum = randomNum
         }
-        return bubbleSort(array: ascendingArray)
+        return ascendingArray
     }
     if(order == 2) {
         var descendingArray: [Int] = []
