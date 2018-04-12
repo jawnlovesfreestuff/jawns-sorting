@@ -214,11 +214,11 @@ func selectionSort(array: [Int]) -> [Int] {
         for a in 0...sortArray.count-2 { // outer loop
             var lowestIndex = a
             for index in 0...sortArray.count-1 { // inner loop 
-               if(sortArray[index] < sortArray[lowest]) {
+               if(sortArray[index] < sortArray[lowestIndex]) {
                   lowestIndex = index
                }
             }
-            if(a != lowest) {
+            if(a != lowestIndex) {
                 containerArray.append(sortArray[lowestIndex])
             }
             
