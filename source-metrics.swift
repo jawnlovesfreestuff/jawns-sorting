@@ -216,15 +216,34 @@ func selectionSort(array: [Int]) -> [Int] {
         }
         print("Container Array: \(containerArray)") // after outer loop
     }
+    func sortPass(sortArray:[Int]) -> [Int] {
+        var a = sortArray
+        for x in 0 ..< a.count - 1 {
+
+            // Find the lowest value in the rest of the array.
+            var lowest = x
+            for y in x + 1 ..< a.count {
+                if isOrderedBefore(a[y], a[lowest]) {
+                    lowest = y
+                }
+            }
+
+            // Swap the lowest value with the current array index.
+            if x != lowest {
+                a.swapAt(x, lowest)
+            }
+        }
+        return a
+    }
     
-    sortPass(sortArray: containerArray)
+    return sortPass(sortArray: containerArray)
     
     /*
     while(!isAscending(checkArray: containerArray)) {
         sortPass(sortArray: array)
     }
     */
-    return containerArray
+    //return containerArray
 }
 
 /********************************************************************************
