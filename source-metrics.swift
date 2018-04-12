@@ -285,9 +285,9 @@ func newArray(arraySize: Int, order: Int) -> [Int] {
         var ascendingArray: [Int] = []
         var lastNumber = 0;
         for _ in 1...arraySize {
-            randomNum = random(min:lastNumber, max:(arraySize*2))
+            let randomNum = random(min:lastNumber, max:(arraySize*2))
             ascendingArray.append(randomNum)
-            lastNum = randomNum
+            var lastNum = randomNum
         }
         return ascendingArray
     }
