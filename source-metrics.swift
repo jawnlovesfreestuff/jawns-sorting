@@ -284,8 +284,13 @@ func newArray(arraySize: Int, order: Int) -> [Int] {
     if(order == 1) {
         var ascendingArray: [Int] = []
         var lastNumber = 0;
-        for _ in 1...arraySize {
-            let randomNum = random(min:lastNumber, max:(arraySize*20))
+        for a in 1...arraySize-1 {
+            if(a == 1) {
+                let randomNum = random(min:lastNumber, max:(arraySize*2))
+            }
+            else {
+                let randomNum = random(min:lastNumber, max:(arraySize*20))
+            }
             lastNumber = randomNum
             ascendingArray.append(randomNum)
         }
@@ -294,8 +299,13 @@ func newArray(arraySize: Int, order: Int) -> [Int] {
     if(order == 2) {
         var descendingArray: [Int] = []
         var lastNumber = 0;
-        for _ in 1...arraySize {
-            let randomNum = random(min:lastNumber, max:(arraySize*20))
+        for a in 1...arraySize {
+            if(a == 1) {
+                let randomNum = random(min:lastNumber, max:(arraySize*2))
+            }
+            else {
+                let randomNum = random(min:lastNumber, max:(arraySize*20))
+            }
             lastNumber = randomNum
             descendingArray.append(randomNum)
         }
