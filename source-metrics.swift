@@ -218,6 +218,8 @@ func selectionSort(array: [Int]) -> [Int] {
                   lowestIndex = index
                }
             }
+            print("a: \(a)")
+            print("lowestIndex: \(lowestIndex)")
             if(a != lowestIndex) {
                 containerArray.append(sortArray[lowestIndex])
             }
