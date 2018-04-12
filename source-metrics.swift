@@ -284,8 +284,8 @@ func newArray(arraySize: Int, order: Int) -> [Int] {
     if(order == 1) {
         var ascendingArray: [Int] = []
         var lastNumber = 0;
-        for a in 1...arraySize {
-            let randomNum = random(min:lastNumber, max:(arraySize*2))
+        for _ in 1...arraySize {
+            let randomNum = random(min:lastNumber, max:(arraySize*20))
             lastNumber = randomNum
             ascendingArray.append(randomNum)
         }
@@ -293,10 +293,13 @@ func newArray(arraySize: Int, order: Int) -> [Int] {
     }
     if(order == 2) {
         var descendingArray: [Int] = []
+        var lastNumber = 0;
         for _ in 1...arraySize {
-            descendingArray.append(random(min:0, max:(arraySize*2)))
+            let randomNum = random(min:lastNumber, max:(arraySize*20))
+            lastNumber = randomNum
+            descendingArray.append(randomNum)
         }
-        return reverseArray(array: bubbleSort(array: descendingArray)) // reverse this
+        return reverseArray(array: descendingArray) // reverse this
     }
     if(order == 3) {
         var randomArray: [Int] = []
