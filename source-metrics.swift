@@ -199,7 +199,7 @@ func insertionSort(array: [Int]) -> [Int]{
 
 func selectionSort(array: [Int]) -> [Int] {
     var containerArray = array
-    
+    /*
     func sortPass(sortArray: inout [Int]) {
 
         for outer in 0...sortArray.count-2 { // outer loop
@@ -215,7 +215,8 @@ func selectionSort(array: [Int]) -> [Int] {
         }
         print("Container Array: \(containerArray)") // after outer loop
     }
-    /*
+    */
+    
     func sortPass(sortArray:[Int]) -> [Int] {
         var a = sortArray
         for x in 0 ..< a.count - 1 {
@@ -229,13 +230,13 @@ func selectionSort(array: [Int]) -> [Int] {
 
             // Swap the lowest value with the current array index.
             if x != lowest {
-                a.swapAt(x, lowest)
+                swapFunc(array: &a, firstIndex:x, secondIndex:lowest)
             }
         }
         return a
     }
-    */
-    sortPass(sortArray: &containerArray)
+    
+    return sortPass(sortArray: containerArray)
     
     /*
     while(!isAscending(checkArray: containerArray)) {
