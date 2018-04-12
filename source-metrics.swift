@@ -210,12 +210,12 @@ func selectionSort(array: [Int]) -> [Int] {
         }
 
         // Swap the lowest value with the current array index.
-        if outer != lowest {
+        if outer != lowestIndex {
             swapFunc(array: &containerArray, firstIndex: outer, secondIndex: lowestIndex)
         }
     }
 
-    return sortPass(sortArray: containerArray)
+    return containerArray
 
 }
 
