@@ -199,9 +199,9 @@ func insertionSort(array: [Int]) -> [Int]{
 
 func selectionSort(array: [Int]) -> [Int] {
     var containerArray = array
-    /*
-    func sortPass(sortArray: [Int]) {
-        // sorting code
+    
+    func sortPass(sortArray: inout [Int]) {
+
         for outer in 0...sortArray.count-2 { // outer loop
             var lowestIndex = outer
             for index in outer+1...sortArray.count-1 { // inner loop 
@@ -209,19 +209,16 @@ func selectionSort(array: [Int]) -> [Int] {
                   lowestIndex = index
                }
             }
-            print("outer: \(outer)")
-            print("lowestIndex: \(lowestIndex)")
             if(outer != lowestIndex) {
-                swapFunc(array: &containerArray, firstIndex: outer, secondIndex: lowestIndex)
+                swapFunc(array: &sortArray, firstIndex: outer, secondIndex: lowestIndex)
             }
         }
         print("Container Array: \(containerArray)") // after outer loop
     }
-    */
+    /*
     func sortPass(sortArray:[Int]) -> [Int] {
         var a = sortArray
         for x in 0 ..< a.count - 1 {
-
             // Find the lowest value in the rest of the array.
             var lowest = x
             for y in x + 1 ..< a.count {
@@ -237,15 +234,15 @@ func selectionSort(array: [Int]) -> [Int] {
         }
         return a
     }
-    
-    return sortPass(sortArray: containerArray)
+    */
+    sortPass(sortArray: &containerArray)
     
     /*
     while(!isAscending(checkArray: containerArray)) {
         sortPass(sortArray: array)
     }
     */
-    //return containerArray
+    return containerArray
 }
 
 /********************************************************************************
