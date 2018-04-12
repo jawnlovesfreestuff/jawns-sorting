@@ -208,12 +208,14 @@ func selectionSort(array: [Int]) -> [Int] {
                 if(lowestNumber == -1) {
                     lowestNumber = sortArray[index]
                 }
-                else if(sortArray[index] < lowestNumber && lowestNumber != containerArray[a]) {
-                    lowestNumber = sortArray[index]
+                else if(sortArray[index] < lowestNumber) {
+                    if(lowestNumber != containerArray[a]) {
+                        lowestNumber = sortArray[index]
+                    }
                 }
                 
             }
-            containerArray.append(lowestNumber)
+            containerArray[a] = lowestNumber
         }
         print("Container Array: \(containerArray)") // after outer loop
     }
