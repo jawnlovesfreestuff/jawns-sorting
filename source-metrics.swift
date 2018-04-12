@@ -283,40 +283,17 @@ func newArray(arraySize: Int, order: Int) -> [Int] {
     
     if(order == 1) {
         var ascendingArray: [Int] = []
-        var lastNumber = 0;
-        for a in 1...arraySize-1 {
-            if(a == 1) {
-                let randomNum = random(min:lastNumber, max:(arraySize*2))
-                lastNumber = randomNum
-                ascendingArray.append(randomNum)
-            }
-            else {
-                let randomNum = random(min:lastNumber, max:(arraySize*20))
-                lastNumber = randomNum
-                ascendingArray.append(randomNum)
-            }
-            
-            
+        for _ in 1...arraySize {
+            ascendingArray.append(random(min:0, max:(arraySize*2)))
         }
-        return ascendingArray
+        return bubbleSort(array: ascendingArray)
     }
     if(order == 2) {
         var descendingArray: [Int] = []
-        var lastNumber = 0;
-        for a in 1...arraySize {
-            if(a == 1) {
-                let randomNum = random(min:lastNumber, max:(arraySize*2))
-                lastNumber = randomNum
-                descendingArray.append(randomNum)
-            }
-            else {
-                let randomNum = random(min:lastNumber, max:(arraySize*20))
-                lastNumber = randomNum
-                descendingArray.append(randomNum)
-            }
-            
+        for _ in 1...arraySize {
+            descendingArray.append(random(min:0, max:(arraySize*2)))
         }
-        return reverseArray(array: descendingArray) // reverse this
+        return reverseArray(array: bubbleSort(array: descendingArray)) // reverse this
     }
     if(order == 3) {
         var randomArray: [Int] = []
@@ -422,4 +399,3 @@ default:
     print("Invalid sort")
 }
                 
-
