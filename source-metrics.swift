@@ -235,10 +235,45 @@ func selectionSort(array: [Int]) -> [Int] {
 |    altered.
 |    The function should return a new, sorted array using the MERGE SORT algorithm.
 ********************************************************************************/
-
-func mergeSort(array: [Int]) {
-    
+func merge(leftArray: [Int], rightArray: [Int]) -> [Int] { // takes in two arrays and returns one sorted
+  var leftIndex = 0
+  var rightIndex = 0
+  var containerArray = [Int]()
+  while(leftIndex < leftArray.count && rightIndex < rightArray.count) {
+    if leftArray[leftIndex] < rightArray[rightIndex] {
+      containerArray.append(leftArray[leftIndex])
+      leftIndex += 1
+    } 
+    else if leftArray[leftIndex] > rightArray[rightIndex] {
+      containerArray.append(rightArray[rightIndex])
+      rightIndex += 1
+    } 
+    else {
+      containerArray.append(leftArray[leftIndex])
+      leftIndex += 1
+      containerArray.append(rightArray[rightIndex])
+      rightIndex += 1
+    }
+  }
+  while leftIndex < leftArray.count {
+    containerArray.append(leftArray[leftIndex])
+    leftIndex += 1
+  }
+  while rightIndex < rightArray.count {
+    containerArray.append(rightArray[rightIndex])
+    rightIndex += 1
+  }
+  return containerArray
 }
+
+func mergeSort(array: [Int]) -> [Int] {
+    let middleIndex = array.count/2
+    let leftArray = mergeSort(Array(array[0..<middleIndex]))
+    let rightArray = mergeSort(Array(array[middleIndex..<array.count]))
+    return merge(leftArray: leftArray, rightArray: rightArray) 
+}
+
+
 
 /********************************************************************************
 | 6.  Define a function which returns a new array of integers.
@@ -369,7 +404,8 @@ case 3:
     print("Selection Sort")  
     print(selectionSort(array: arrayToSort))
 case 4:
-    print("Merge Sort")    
+    print("Merge Sort")   
+    print(mergeSort(array: arrayToSort))
 default:
     print("Invalid sort")
 }
