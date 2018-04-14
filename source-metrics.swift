@@ -239,14 +239,14 @@ func merge(leftArray: [Int], rightArray: [Int]) -> [Int] {
         }
     }
     while leftIndex < leftArray.count {
-        sortedArray.append(leftArray[leftIndex])
+        containerArray.append(leftArray[leftIndex])
         leftIndex += 1
     }
     while rightIndex < rightArray.count {
-        sortedArray.append(rightArray[rightIndex])
+        containerArray.append(rightArray[rightIndex])
         rightIndex += 1
     }
-    return sortedArray
+    return containerArray
 }
 
 
