@@ -221,11 +221,11 @@ func selectionSort(array: [Int]) -> [Int] {
 ********************************************************************************/
 
 func merge(leftArray: [Int], rightArray: [Int]) -> [Int] {
-    // Index of items to compare
     var leftIndex = 0
     var rightIndex = 0
-    print("Merging \(leftArray) with \(rightArray)")
     var sortedArray = [Int]()
+    //print("Merging \(leftArray) with \(rightArray)")
+    print("")
     while leftIndex < leftArray.count && rightIndex < rightArray.count {
         if leftArray[leftIndex] < rightArray[rightIndex] {
             sortedArray.append(leftArray[leftIndex])
@@ -238,7 +238,6 @@ func merge(leftArray: [Int], rightArray: [Int]) -> [Int] {
             leftIndex += 1
             sortedArray.append(rightArray[rightIndex])
             rightIndex += 1
-            
         }
     }
     while leftIndex < leftArray.count {
