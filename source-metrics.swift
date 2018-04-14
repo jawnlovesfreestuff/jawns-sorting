@@ -229,14 +229,11 @@ func merge(leftArray: [Int], rightArray: [Int]) -> [Int] {
     while leftIndex < leftArray.count && rightIndex < rightArray.count {
         if leftArray[leftIndex] < rightArray[rightIndex] {
             sortedArray.append(leftArray[leftIndex])
-            //print("Moving left item into array: \(leftArray[leftIndex])")
             leftIndex += 1
         } else if leftArray[leftIndex] > rightArray[rightIndex] {
             sortedArray.append(rightArray[rightIndex])
-            //print("Moving right item into array: \(rightArray[rightIndex])")
             rightIndex += 1
         } else {
-            //print("Numbers were identical: \(leftArray[leftIndex]) == \(rightArray[rightIndex])")
             sortedArray.append(leftArray[leftIndex])
             leftIndex += 1
             sortedArray.append(rightArray[rightIndex])
@@ -246,12 +243,10 @@ func merge(leftArray: [Int], rightArray: [Int]) -> [Int] {
     }
     while leftIndex < leftArray.count {
         sortedArray.append(leftArray[leftIndex])
-        //print("Moving left item into array: \(leftArray[leftIndex])")
         leftIndex += 1
     }
     while rightIndex < rightArray.count {
         sortedArray.append(rightArray[rightIndex])
-        //print("Moving right item into array: \(rightArray[rightIndex])")
         rightIndex += 1
     }
     
