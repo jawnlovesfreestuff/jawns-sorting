@@ -257,7 +257,7 @@ func mergeSort(array: [Int]) -> [Int] {
 }
 */
 
-func merge(leftArray leftArray: [Int], rightArray: [Int]) -> [Int] {
+func merge(leftArray: [Int], rightArray: [Int]) -> [Int] {
     // Index of items to compare
     var leftIndex = 0
     var rightIndex = 0
@@ -313,8 +313,8 @@ func mergeSort(array: [Int]) -> [Int] {
     let middleIndex = array.count / 2
     
     // Recursively sort the left and right parts of the array
-    let leftArray = mergeSort(Array(array[0..<middleIndex]))
-    let rightArray = mergeSort(Array(array[middleIndex..<array.count]))
+    let leftArray = mergeSort(array: Array(array[0..<middleIndex]))
+    let rightArray = mergeSort(array: Array(array[middleIndex..<array.count]))
     
     return merge(leftArray: leftArray, rightArray: rightArray)
 }
