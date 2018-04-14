@@ -225,6 +225,7 @@ func merge(leftArray: [Int], rightArray: [Int]) -> [Int] {
     var rightIndex = 0
     var containerArray = [Int]()
     while leftIndex < leftArray.count && rightIndex < rightArray.count {
+        print("Looping!")
         if leftArray[leftIndex] < rightArray[rightIndex] {
             containerArray.append(leftArray[leftIndex])
             leftIndex += 1
