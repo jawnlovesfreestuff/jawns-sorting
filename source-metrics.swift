@@ -224,25 +224,19 @@ func merge(leftArray: [Int], rightArray: [Int]) -> [Int] {
     // Index of items to compare
     var leftIndex = 0
     var rightIndex = 0
-    
-    print("Merging \(leftArray) and \(rightArray)")
-    
-    // Array containing the sorted items
+    print("Merging \(leftArray) with \(rightArray)")
     var sortedArray = [Int]()
-    
-    // Compare the elements and add them to the sorted array *in order*
     while leftIndex < leftArray.count && rightIndex < rightArray.count {
         if leftArray[leftIndex] < rightArray[rightIndex] {
             sortedArray.append(leftArray[leftIndex])
-            print("Moving left item into array: \(leftArray[leftIndex])")
+            //print("Moving left item into array: \(leftArray[leftIndex])")
             leftIndex += 1
         } else if leftArray[leftIndex] > rightArray[rightIndex] {
             sortedArray.append(rightArray[rightIndex])
-            print("Moving right item into array: \(rightArray[rightIndex])")
+            //print("Moving right item into array: \(rightArray[rightIndex])")
             rightIndex += 1
         } else {
-            print("Numbers were identical: \(leftArray[leftIndex]) == \(rightArray[rightIndex])")
-            
+            //print("Numbers were identical: \(leftArray[leftIndex]) == \(rightArray[rightIndex])")
             sortedArray.append(leftArray[leftIndex])
             leftIndex += 1
             sortedArray.append(rightArray[rightIndex])
@@ -250,17 +244,14 @@ func merge(leftArray: [Int], rightArray: [Int]) -> [Int] {
             
         }
     }
-    
-    // At this point, the elements were compared and sorted properly,
-    // so we just need to append the rest of the items to the array
     while leftIndex < leftArray.count {
         sortedArray.append(leftArray[leftIndex])
-        print("Moving left item into array: \(leftArray[leftIndex])")
+        //print("Moving left item into array: \(leftArray[leftIndex])")
         leftIndex += 1
     }
     while rightIndex < rightArray.count {
         sortedArray.append(rightArray[rightIndex])
-        print("Moving right item into array: \(rightArray[rightIndex])")
+        //print("Moving right item into array: \(rightArray[rightIndex])")
         rightIndex += 1
     }
     
@@ -269,16 +260,10 @@ func merge(leftArray: [Int], rightArray: [Int]) -> [Int] {
 
 
 func mergeSort(array: [Int]) -> [Int] {
-    // If our array only has one item, we're done
     guard array.count > 1 else { return array }
-    
-    // Find the middle of the array
     let middleIndex = array.count / 2
-    
-    // Recursively sort the left and right parts of the array
     let leftArray = mergeSort(array: Array(array[0..<middleIndex]))
     let rightArray = mergeSort(array: Array(array[middleIndex..<array.count]))
-    
     return merge(leftArray: leftArray, rightArray: rightArray)
 }
 
