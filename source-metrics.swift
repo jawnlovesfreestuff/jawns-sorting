@@ -414,7 +414,7 @@ func readFile(pathIn: String) -> String {
     var readText : String
     do {
         try readText = String(contentsOf: pathURL, encoding: .utf8)
-        return String
+        return readText
     } catch (let error) {
         fatalError("Failed to read file because \(error).")
     }
