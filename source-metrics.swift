@@ -361,17 +361,17 @@ func ui_orderness() {
 ********************************************************************************/
 
 func writeToFile(pathIn: String, input: String) {
-    var pathURL = URL(fileURLWithPath: pathIn)
+    let pathURL = URL(fileURLWithPath: pathIn)
     do {
-        try input.write(to: pathURL, atomically: true, encoding .utf8)
+        try input.write(to: pathURL, atomically: true, encoding: .utf8)
     } catch (let error) {
         fatalError("Failed to write file because \(error).")
     }
 }
 
 func readFile(pathIn: String) -> String { 
-    var pathURL = URL(fileURLWithPath: pathIn)
-    var readText : String
+    let pathURL = URL(fileURLWithPath: pathIn)
+    let readText : String
     do {
         try readText = String(contentsOf: pathURL, encoding: .utf8)
         return readText
@@ -382,7 +382,7 @@ func readFile(pathIn: String) -> String {
 
 func readArguments() {
     for index in 1...CommandLine.argc {
-        let input  = String(CommandLine.arguments[index])
+        let input  = CommandLine.arguments[index]
         if(input == "-- write") {
             print("write")
         }
