@@ -384,10 +384,10 @@ func readArguments() {
     for argument in CommandLine.arguments {
     switch argument {
         case "-- write":
-            print("first argument");
+            print(argument);
 
         case "-- read":
-            print("second argument");
+            print(argument);
 
         default:
             print("poop");
