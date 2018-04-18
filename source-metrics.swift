@@ -17,7 +17,7 @@ func readArguments() {
             }
             print(container)
         }*/
-        if(CommandLine.arcs == 3) {
+        if(CommandLine.argc == 3) {
             let filePath = CommandLine.arguments[3]
         }
         else {
