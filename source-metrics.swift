@@ -421,5 +421,14 @@ func readFile(pathIn: String) -> String {
 }
 
 func readArguments() {
-    
+    for index in 1...CommandLine.argc {
+        let input  = String(CommandLine.arguments[index])
+        if(input == "-- write") {
+            print("write")
+        }
+        else if(input == "-- read") {
+            print("read")
+        }
+        
+    }
 }
