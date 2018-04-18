@@ -381,6 +381,7 @@ func readFile(pathIn: String) -> String {
 }
 
 func readArguments() {
+    /*
     for argument in CommandLine.arguments {
     switch argument {
         case "--write":
@@ -391,6 +392,12 @@ func readArguments() {
 
         default:
             print("poop");
+        }
+    }
+    */
+    for i in 2...CommandLine.argc {
+        if(CommandLine.arguments[i] == "--write") {
+            print("WRITE")
         }
     }
 }
