@@ -402,8 +402,9 @@ func readArguments() {
             while(input_sortType < 1 || input_sortType > 4) {
                 input_sortType = intInput()
             }
-            let arrayToSort = readFile(pathIn: filePath).split(separator:"|")
+            let arrayToSort = readFile(pathIn: filePath).split(separator:"|").map{ Int($0)!}
             print(arrayToSort)
+
             /*
             print("============================================") // 46 "="
             print("======       Array to be sorted        =====") 
