@@ -403,7 +403,30 @@ func readArguments() {
                 input_sortType = intInput()
             }
             let arrayToSort = readFile(pathIn: filePath).split(separator:"|")
-            print(arrayToSort)
+            print("============================================") // 46 "="
+            print("======       Array to be sorted        =====") 
+            print("============================================") // 46 "="
+            print("\(arrayToSort)")
+            print("============================================") // 46 "="
+            print("======          Array sorted           =====") 
+            print("============================================") // 46 "="
+
+            switch input_sortType {
+            case 1:
+                print("Bubble Sort")
+                print(bubbleSort(array: arrayToSort))
+            case 2:
+                print("Insertion Sort")
+                print(insertionSort(array: arrayToSort))
+            case 3:
+                print("Selection Sort")  
+                print(selectionSort(array: arrayToSort))
+            case 4:
+                print("Merge Sort")   
+                print(mergeSort(array: arrayToSort))
+            default:
+                print("Invalid sort")
+            }
         }
     }
     else {
