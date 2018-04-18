@@ -7,6 +7,7 @@ import Foundation
 
 func readArguments() {
     if(CommandLine.arguments[1] == "--write") {
+        /*
         if(CommandLine.argc >= 3) {
             var container = ""
             let arguments = CommandLine.arguments
@@ -15,6 +16,9 @@ func readArguments() {
                 container += arguments[Int(i)]
             }
             print(container)
+        }*/
+        if(CommandLine.arcs == 3) {
+            let filePath = CommandLine.arguments[3]
         }
         else {
             print("NO FILE PATH")
