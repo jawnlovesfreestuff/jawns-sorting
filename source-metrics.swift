@@ -6,21 +6,13 @@
 import Foundation
 
 func readArguments() {
-    /*
-    for argument in CommandLine.arguments {
-        switch argument {
-        case "--write":
-            print("write");
-
-        case "--read":
-            print("read");
-
-        default:
-            print("poop");
-        }
-    }
-    */
     if(CommandLine.arguments[1] == "--write") {
+        if(CommandLine.arguments[2]) {
+            let filePath = CommandLine.arguments[2]
+        }
+        else {
+            print("NO FILE PATH")
+        }
         print("write")
     }
     else if (CommandLine.arguments[1] == "--read") {
