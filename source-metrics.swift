@@ -376,9 +376,20 @@ func readArguments() {
         }*/
         if(CommandLine.argc == 3) {
             let filePath = CommandLine.arguments[2]
-            let randomArray = newArray(arraySize: 10, order: 3).map(String.init).joined(separator: "|")
-            writeToFile(pathIn: filePath, input: randomArray)
-            
+            ui_openingMenu()
+            var input_sortType = 0
+            while(input_sortType < 1 || input_sortType > 4) {
+                input_sortType = intInput()
+            }
+            ui_arraySize()
+            let input_arraySize = intInput()
+            ui_orderness()
+            let input_orderness = intInput()   
+            print("============================================") // 46 "="
+            // Arrays
+            let randomArray = newArray(arraySize: input_arraySize, input_orderness: 3).map(String.init).joined(separator: "|")
+                      writeToFile(pathIn: filePath, input: randomArray)
+            ui_clearScreen()
             
         
             
