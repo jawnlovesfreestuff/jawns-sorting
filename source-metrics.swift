@@ -11,7 +11,7 @@ func readArguments() {
             var container = ""
             var counter = 1
             let arguments = CommandLine.arguments
-            for i in 0...CommandLine.argc-2 {
+            for i in 1...CommandLine.argc-1 {
                 //print(arguments[counter])
                 print(arguments[Int(i)])
                 counter += 1
