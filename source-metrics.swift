@@ -376,6 +376,7 @@ func readArguments() {
         }*/
         if(CommandLine.argc == 3) {
             let filePath = CommandLine.arguments[2]
+            ui_arraySize()
             let input_arraySize = intInput()
             ui_orderness()
             let input_orderness = intInput()   
