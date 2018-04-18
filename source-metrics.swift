@@ -11,6 +11,7 @@ func readArguments() {
             var container = ""
             let arguments = CommandLine.arguments
             print(type(of: arguments))
+            print(arguments[0])
             print(container)
         }
         else {
