@@ -7,7 +7,7 @@ import Foundation
 
 func readArguments() {
     if(CommandLine.arguments[1] == "--write") {
-        if(CommandLine.arguments[2]) {
+        if(CommandLine.argc >= 2) {
             let filePath = CommandLine.arguments[2]
         }
         else {
