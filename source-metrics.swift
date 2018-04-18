@@ -8,8 +8,11 @@ import Foundation
 func readArguments() {
     if(CommandLine.arguments[1] == "--write") {
         if(CommandLine.argc >= 3) {
-            let filePath = CommandLine.arguments[2]
-            print("FILE PATH: \(filePath)")
+            var container = ""
+            for arguments in CommandLine.arguments {
+                container += arguments
+            }
+            print(container)
         }
         else {
             print("NO FILE PATH")
