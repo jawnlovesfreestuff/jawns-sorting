@@ -363,7 +363,7 @@ func readFile(pathIn: String) -> String {
 
 func readArguments() {
     for argument in CommandLine.arguments {
-    switch argument {
+        switch argument {
         case "--write":
             print("write");
 
