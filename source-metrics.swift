@@ -21,7 +21,10 @@ func readArguments() {
             let filePath = CommandLine.arguments[3]
         }
         else {
-            print("NO FILE PATH")
+            print("INVALID FILE PATH")
+            print("PLEASE USE THIS FORMAT: ")
+            print("home/directory/file.example")
+            print("WITHOUT ANY SPACES IN THE FILE PATH")
         }
         print("write")
     }
