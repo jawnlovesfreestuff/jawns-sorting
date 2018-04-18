@@ -381,8 +381,8 @@ func readFile(pathIn: String) -> String {
 }
 
 func readArguments() {
-    for index in 1...CommandLine.argc {
-        let input  = CommandLine.arguments[index]
+    for i in 1...CommandLine.argc {
+        let input  = CommandLine.arguments[i]
         if(input == "-- write") {
             print("write")
         }
@@ -421,7 +421,7 @@ if(!exit) {
     let input_orderness = intInput()   
     print("============================================") // 46 "="
     // Arrays
-    var arrayToSort = newArray(arraySize: input_arraySize, order: input_orderness)
+    let arrayToSort = newArray(arraySize: input_arraySize, order: input_orderness)
     ui_clearScreen()
     print("============================================") // 46 "="
     print("======       Array to be sorted        =====") 
