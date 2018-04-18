@@ -416,9 +416,9 @@ if(!exit) {
         input_sortType = intInput()
     }
     ui_arraySize()
-    var input_arraySize = intInput()
+    let input_arraySize = intInput()
     ui_orderness()
-    var input_orderness = intInput()   
+    let input_orderness = intInput()   
     print("============================================") // 46 "="
     // Arrays
     var arrayToSort = newArray(arraySize: input_arraySize, order: input_orderness)
