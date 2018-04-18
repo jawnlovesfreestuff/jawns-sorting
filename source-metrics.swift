@@ -375,7 +375,8 @@ func readArguments() {
         }*/
         if(CommandLine.argc == 3) {
             let filePath = CommandLine.arguments[2]
-            writeToFile(pathIn: filePath, input: String(newArray(arraySize: 10, order: 3)))
+            let randomArray = newArray(arraySize: 10, order: 3)
+            writeToFile(pathIn: filePath, input: randomArray)
         }
         else {
             print("INVALID FILE PATH")
