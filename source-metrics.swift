@@ -354,47 +354,7 @@ func ui_orderness() {
     print("============================================") // 46 "="
 }
 
-/********************************************************************************
-| Execution
-********************************************************************************/
-// Options 
-ui_openingMenu()
-var input_sortType = 0
-while(input_sortType < 1 || input_sortType > 4) {
-    input_sortType = intInput()
-}
-ui_arraySize()
-var input_arraySize = intInput()
-ui_orderness()
-var input_orderness = intInput()   
-print("============================================") // 46 "="
-// Arrays
-var arrayToSort = newArray(arraySize: input_arraySize, order: input_orderness)
-ui_clearScreen()
-print("============================================") // 46 "="
-print("======       Array to be sorted        =====") 
-print("============================================") // 46 "="
-print("\(arrayToSort)")
-print("============================================") // 46 "="
-print("======          Array sorted           =====") 
-print("============================================") // 46 "="
 
-switch input_sortType {
-case 1:
-    print("Bubble Sort")
-    print(bubbleSort(array: arrayToSort))
-case 2:
-    print("Insertion Sort")
-    print(insertionSort(array: arrayToSort))
-case 3:
-    print("Selection Sort")  
-    print(selectionSort(array: arrayToSort))
-case 4:
-    print("Merge Sort")   
-    print(mergeSort(array: arrayToSort))
-default:
-    print("Invalid sort")
-}
                 
 /********************************************************************************
 | Command Line 
@@ -429,6 +389,62 @@ func readArguments() {
         else if(input == "-- read") {
             print("read")
         }
-        
+    }
+}
+
+
+
+/********************************************************************************
+| Execution
+********************************************************************************/
+var exit = false
+
+// Command Line
+if(CommandLine.argc > 1){
+    exit = true
+    readArguments() 
+}
+else {
+    print("poop")
+}
+
+// Options 
+if(!exit) {
+    ui_openingMenu()
+    var input_sortType = 0
+    while(input_sortType < 1 || input_sortType > 4) {
+        input_sortType = intInput()
+    }
+    ui_arraySize()
+    var input_arraySize = intInput()
+    ui_orderness()
+    var input_orderness = intInput()   
+    print("============================================") // 46 "="
+    // Arrays
+    var arrayToSort = newArray(arraySize: input_arraySize, order: input_orderness)
+    ui_clearScreen()
+    print("============================================") // 46 "="
+    print("======       Array to be sorted        =====") 
+    print("============================================") // 46 "="
+    print("\(arrayToSort)")
+    print("============================================") // 46 "="
+    print("======          Array sorted           =====") 
+    print("============================================") // 46 "="
+
+    switch input_sortType {
+    case 1:
+        print("Bubble Sort")
+        print(bubbleSort(array: arrayToSort))
+    case 2:
+        print("Insertion Sort")
+        print(insertionSort(array: arrayToSort))
+    case 3:
+        print("Selection Sort")  
+        print(selectionSort(array: arrayToSort))
+    case 4:
+        print("Merge Sort")   
+        print(mergeSort(array: arrayToSort))
+    default:
+        print("Invalid sort")
     }
 }
