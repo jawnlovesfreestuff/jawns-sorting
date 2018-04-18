@@ -387,7 +387,7 @@ func readArguments() {
             let input_orderness = intInput()   
             print("============================================") // 46 "="
             // Arrays
-            let randomArray = newArray(arraySize: input_arraySize, orderness: input_orderness).map(String.init).joined(separator: "|")
+            let randomArray = newArray(arraySize: input_arraySize, order: input_orderness).map(String.init).joined(separator: "|")
                       writeToFile(pathIn: filePath, input: randomArray)
             ui_clearScreen()
             
