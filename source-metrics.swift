@@ -12,6 +12,7 @@ func readArguments() {
             for arguments in CommandLine.arguments {
                 container += arguments
             }
+            container -= CommandLine.arguments[1]
             print(container)
         }
         else {
