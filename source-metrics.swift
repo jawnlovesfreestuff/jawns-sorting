@@ -13,7 +13,7 @@ func readArguments() {
             let arguments = CommandLine.arguments
             for i in 0...CommandLine.argc-2 {
                 //print(arguments[counter])
-                print(arguments[Int(i)!])
+                print(arguments[Int(i)])
                 counter += 1
             }
             print(type(of: CommandLine.argc))
