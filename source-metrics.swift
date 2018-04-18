@@ -9,10 +9,10 @@ func readArguments() {
     if(CommandLine.arguments[1] == "--write") {
         if(CommandLine.argc >= 3) {
             var container = ""
-            for arguments in CommandLine.arguments {
-                container += arguments
+            let arguments == CommandLine.arguments
+            for index in 1..<arguments.argc {
+                container += arguments[index]
             }
-            container -= CommandLine.arguments[1]
             print(container)
         }
         else {
