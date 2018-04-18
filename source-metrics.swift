@@ -381,13 +381,9 @@ func readArguments() {
             ui_orderness()
             let input_orderness = intInput()   
             print("============================================") // 46 "="
-            // Arrays
             let randomArray = newArray(arraySize: input_arraySize, order: input_orderness).map(String.init).joined(separator: "|")
                       writeToFile(pathIn: filePath, input: randomArray)
             ui_clearScreen()
-            
-        
-            
         }
         else {
             print("INVALID FILE PATH")
@@ -399,9 +395,22 @@ func readArguments() {
     }
     else if (CommandLine.arguments[1] == "--read") {
         print("read")
+        if(CommandLine.argc == 3) {
+            let filePath = CommandLine.arguments[2]
+            ui_openingMenu()
+            var input_sortType = 0
+            while(input_sortType < 1 || input_sortType > 4) {
+                input_sortType = intInput()
+            }
+            
+            let arrayToSort = readFile(fileIn: filePath)
+        }
     }
     else {
-        print("poop")
+        print("INVALID FILE PATH")
+        print("PLEASE USE THIS FORMAT: ")
+        print("home/directory/file.example")
+        print("WITHOUT ANY SPACES IN THE FILE PATH")
     }
 }
 
