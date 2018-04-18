@@ -403,7 +403,7 @@ func readArguments() {
                 input_sortType = intInput()
             }
             
-            let arrayToSort = readFile(fileIn: filePath)
+            let arrayToSort = readFile(pathIn: filePath)
         }
     }
     else {
