@@ -10,6 +10,10 @@ func readArguments() {
         if(CommandLine.argc >= 3) {
             var container = ""
             let arguments = CommandLine.arguments
+            for i in 1...CommandLine.argc-2 {
+                print(arguments[i])
+            }
+            
             print(type(of: arguments))
             print(arguments[0])
             print(container)
