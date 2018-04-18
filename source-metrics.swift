@@ -5,38 +5,6 @@
 
 import Foundation
 
-func readArguments() {
-    if(CommandLine.arguments[1] == "--write") {
-        /*
-        if(CommandLine.argc >= 3) {
-            var container = ""
-            let arguments = CommandLine.arguments
-            for i in 2...CommandLine.argc-1 {
-                print(arguments[Int(i)])
-                container += arguments[Int(i)]
-            }
-            print(container)
-        }*/
-        if(CommandLine.argc == 3) {
-            let filePath = CommandLine.arguments[2]
-        }
-        else {
-            print("INVALID FILE PATH")
-            print("PLEASE USE THIS FORMAT: ")
-            print("home/directory/file.example")
-            print("WITHOUT ANY SPACES IN THE FILE PATH")
-        }
-        print("write")
-    }
-    else if (CommandLine.arguments[1] == "--read") {
-        print("read")
-    }
-    else {
-        print("poop")
-    }
-}
-
-
 /********************************************************************************
 | Types
 ********************************************************************************/
@@ -393,7 +361,37 @@ func readFile(pathIn: String) -> String {
     }
 }
 
-
+func readArguments() {
+    if(CommandLine.arguments[1] == "--write") {
+        /*
+        if(CommandLine.argc >= 3) {
+            var container = ""
+            let arguments = CommandLine.arguments
+            for i in 2...CommandLine.argc-1 {
+                print(arguments[Int(i)])
+                container += arguments[Int(i)]
+            }
+            print(container)
+        }*/
+        if(CommandLine.argc == 3) {
+            let filePath = CommandLine.arguments[2]
+            writeToFile(pathIn: filePath, input: String(newArray(arraySize: 10, order: 3)))
+        }
+        else {
+            print("INVALID FILE PATH")
+            print("PLEASE USE THIS FORMAT: ")
+            print("home/directory/file.example")
+            print("WITHOUT ANY SPACES IN THE FILE PATH")
+        }
+        print("write")
+    }
+    else if (CommandLine.arguments[1] == "--read") {
+        print("read")
+    }
+    else {
+        print("poop")
+    }
+}
 
 
 
