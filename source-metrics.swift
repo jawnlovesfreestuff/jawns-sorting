@@ -6,14 +6,6 @@
 import Foundation
 
 
-let arjun = "1,32,45,5"
-print(self.get_numbers(stringtext: arjun))
-
-func get_numbers(stringtext:String) -> [Int] {
-    let StringRecordedArr = stringtext.components(separatedBy: ",")
-    return StringRecordedArr.map { Int($0)!}   
-}
-
 /********************************************************************************
 | Types
 ********************************************************************************/
