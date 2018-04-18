@@ -395,7 +395,7 @@ func readArguments() {
         }
     }
     */
-    for i in 2...CommandLine.argc {
+    for i in 2..<CommandLine.argc {
         if(CommandLine.arguments[Int(i)] == "--write") {
             print("WRITE")
         }
