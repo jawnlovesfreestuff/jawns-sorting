@@ -9,6 +9,7 @@ func readArguments() {
     if(CommandLine.arguments[1] == "--write") {
         if(CommandLine.argc >= 3) {
             let filePath = CommandLine.arguments[2]
+            print("FILE PATH: \(filePath)")
         }
         else {
             print("NO FILE PATH")
