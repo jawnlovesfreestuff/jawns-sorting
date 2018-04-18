@@ -5,6 +5,33 @@
 
 import Foundation
 
+func readArguments() {
+    /*
+    for argument in CommandLine.arguments {
+        switch argument {
+        case "--write":
+            print("write");
+
+        case "--read":
+            print("read");
+
+        default:
+            print("poop");
+        }
+    }
+    */
+    if(CommandLine.arguments[1] == "--write") {
+        print("write")
+    }
+    else if (CommandLine.arguments[1] == "--read") {
+        print("read")
+    }
+    else {
+        print("poop")
+    }
+}
+
+
 /********************************************************************************
 | Types
 ********************************************************************************/
@@ -361,31 +388,7 @@ func readFile(pathIn: String) -> String {
     }
 }
 
-func readArguments() {
-    /*
-    for argument in CommandLine.arguments {
-        switch argument {
-        case "--write":
-            print("write");
 
-        case "--read":
-            print("read");
-
-        default:
-            print("poop");
-        }
-    }
-    */
-    if(CommandLine.arguments[2] == "--write") {
-        print("write")
-    }
-    else if (CommandLine.arguments[2] == "--read") {
-        print("read")
-    }
-    else {
-        print("poop")
-    }
-}
 
 
 
