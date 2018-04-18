@@ -383,11 +383,11 @@ func readFile(pathIn: String) -> String {
 func readArguments() {
     for argument in CommandLine.arguments {
     switch argument {
-        case "-- write":
-            print(argument);
+        case "--write":
+            print("write");
 
-        case "-- read":
-            print(argument);
+        case "--read":
+            print("read");
 
         default:
             print("poop");
