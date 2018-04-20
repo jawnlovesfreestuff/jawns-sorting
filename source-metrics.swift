@@ -83,8 +83,6 @@ func bubbleSort(array: [Int]) -> [Int] {
     var totalPasses = 0
     var totalSwaps = 0
     func sortPass(sortArray: inout [Int]) {
-        //print("============= START OF PASS #\(totalPasses) =============") // 15 "=" 
-        //print("$ Array before pass: ", sortArray)
         // sorting code
         for i in 0...sortArray.count-2 {
             if(sortArray[i] > sortArray[i+1]) {
@@ -93,18 +91,13 @@ func bubbleSort(array: [Int]) -> [Int] {
             }        
         }
         totalPasses += 1 // global var
-        //print("$ Array after pass: ", sortArray)
-        //print("============================================") // 46 "="
     }
     func isAscending(checkArray: [Int]) -> Bool {
-        //print("============================================") // 46 "="
-        //print("! Checking ", checkArray)
         for i in 0...checkArray.count-2 {
             if(checkArray[i] > checkArray[i+1]) {
                 //print("$ Array is not sorted!")
                 return false // array is not sorted 
             }
-
         }
         //print("$ Array is sorted!")
         return true // array is sorted
@@ -392,6 +385,55 @@ func readArguments() {
             print("WITHOUT ANY SPACES IN THE FILE PATH")
         }
         print("write")
+    }
+    else if (CommandLine.arguments[1] == "--read" && CommandLine.arguments[3] == "--repeatSort") {
+        print("read and repeatSort")
+        if(CommandLine.argc == 5) {
+            let filePath = CommandLine.arguments[2]
+            let repeatN = CommandLine.arguments[4]
+            ui_openingMenu()
+            var input_sortType = 0
+            while(input_sortType < 1 || input_sortType > 4) {
+                input_sortType = intInput()
+            }
+            let arrayToSort = readFile(pathIn: filePath).split(separator:"|").map{ Int($0)!}
+            //print(arrayToSort)
+
+            
+            print("============================================") // 46 "="
+            print("======       Array to be sorted        =====") 
+            print("============================================") // 46 "="
+            print("\(arrayToSort)")
+            print("============================================") // 46 "="
+            print("======          Array sorted           =====") 
+            print("============================================") // 46 "="
+            for _ 1...repeatN {
+                switch input_sortType {
+                case 1:
+                    print("Bubble Sort")
+                    print(bubbleSort(array: arrayToSort))
+                case 2:
+                    print("Insertion Sort")
+                    print(insertionSort(array: arrayToSort))
+                case 3:
+                    print("Selection Sort")  
+                    print(selectionSort(array: arrayToSort))
+                case 4:
+                    print("Merge Sort")   
+                    print(mergeSort(array: arrayToSort))
+                default:
+                    print("Invalid sort")
+                }
+            }
+        }
+    }
+    else {
+        print("INVALID FILE PATH")
+        print("PLEASE USE THIS FORMAT: ")
+        print("home/directory/file.example")
+        print("WITHOUT ANY SPACES IN THE FILE PATH")
+    }
+        
     }
     else if (CommandLine.arguments[1] == "--read") {
         print("read")
