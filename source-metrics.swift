@@ -389,8 +389,10 @@ func readArguments() {
     else if (CommandLine.arguments[1] == "--read" && CommandLine.arguments[3] == "--repeatSort") {
         print("read and repeatSort")
         if(CommandLine.argc == 5) {
+            assert(CommandLine.arguments[1] != nil, "Argument must be a string")
+            assert(Int(CommandLine.arguments[4]) != nil, "Argument must be an integer")
             let filePath = CommandLine.arguments[2]
-            let repeatN = CommandLine.arguments[4]
+            let repeatN = Int(CommandLine.arguments[4])!
             ui_openingMenu()
             var input_sortType = 0
             while(input_sortType < 1 || input_sortType > 4) {
