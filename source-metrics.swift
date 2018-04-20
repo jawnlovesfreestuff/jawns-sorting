@@ -357,6 +357,7 @@ func readFile(pathIn: String) -> String {
 
 func readArguments() {
     if(CommandLine.arguments[1] == "--write") {
+        print("write")
         /*
         if(CommandLine.argc >= 3) {
             var container = ""
@@ -384,24 +385,17 @@ func readArguments() {
             print("home/directory/file.example")
             print("WITHOUT ANY SPACES IN THE FILE PATH")
         }
-        print("write")
     }
-    else if (CommandLine.arguments[1] == "--read" && CommandLine.arguments[3] == "--repeatSort") {
-        print("read and repeatSort")
-        if(CommandLine.argc == 5) {
-            assert(CommandLine.arguments[1] != nil, "Argument must be a string")
-            assert(Int(CommandLine.arguments[4]) != nil, "Argument must be an integer")
+    else if (CommandLine.arguments[1] == "--read" && CommandLine.arguments[3] == "--executeSort") {
+        print("execute sort")
+        if(CommandLine.argc == 4) {
             let filePath = CommandLine.arguments[2]
-            let repeatN = Int(CommandLine.arguments[4])!
             ui_openingMenu()
             var input_sortType = 0
             while(input_sortType < 1 || input_sortType > 4) {
                 input_sortType = intInput()
             }
             let arrayToSort = readFile(pathIn: filePath).split(separator:"|").map{ Int($0)!}
-            //print(arrayToSort)
-
-            
             print("============================================") // 46 "="
             print("======       Array to be sorted        =====") 
             print("============================================") // 46 "="
@@ -409,7 +403,7 @@ func readArguments() {
             print("============================================") // 46 "="
             print("======          Array sorted           =====") 
             print("============================================") // 46 "="
-            for _ in 1...repeatN {
+            for _ in 0...repeatN {
                 switch input_sortType {
                 case 1:
                     print("Bubble Sort")
@@ -427,6 +421,57 @@ func readArguments() {
                     print("Invalid sort")
                 }
             }
+        }
+        else {
+            print("INVALID FILE PATH")
+            print("PLEASE USE THIS FORMAT: ")
+            print("home/directory/file.example")
+            print("WITHOUT ANY SPACES IN THE FILE PATH")
+        }
+    }
+    else if (CommandLine.arguments[1] == "--read" && CommandLine.arguments[3] == "--repeatSort") {
+        print("read and repeatSort")
+        if(CommandLine.argc == 5) {
+            assert(Int(CommandLine.arguments[4]) != nil, "Argument must be an integer")
+            let filePath = CommandLine.arguments[2]
+            let repeatN = Int(CommandLine.arguments[4])!
+            ui_openingMenu()
+            var input_sortType = 0
+            while(input_sortType < 1 || input_sortType > 4) {
+                input_sortType = intInput()
+            }
+            let arrayToSort = readFile(pathIn: filePath).split(separator:"|").map{ Int($0)!}
+            print("============================================") // 46 "="
+            print("======       Array to be sorted        =====") 
+            print("============================================") // 46 "="
+            print("\(arrayToSort)")
+            print("============================================") // 46 "="
+            print("======          Array sorted           =====") 
+            print("============================================") // 46 "="
+            for _ in 0...repeatN {
+                switch input_sortType {
+                case 1:
+                    print("Bubble Sort")
+                    print(bubbleSort(array: arrayToSort))
+                case 2:
+                    print("Insertion Sort")
+                    print(insertionSort(array: arrayToSort))
+                case 3:
+                    print("Selection Sort")  
+                    print(selectionSort(array: arrayToSort))
+                case 4:
+                    print("Merge Sort")   
+                    print(mergeSort(array: arrayToSort))
+                default:
+                    print("Invalid sort")
+                }
+            }
+        }
+        else {
+            print("INVALID FILE PATH")
+            print("PLEASE USE THIS FORMAT: ")
+            print("home/directory/file.example")
+            print("WITHOUT ANY SPACES IN THE FILE PATH")
         }
     }
     else if (CommandLine.arguments[1] == "--read") {
@@ -466,15 +511,14 @@ func readArguments() {
             default:
                 print("Invalid sort")
             }
-            
         }
-    }
-    else {
-        print("INVALID FILE PATH")
-        print("PLEASE USE THIS FORMAT: ")
-        print("home/directory/file.example")
-        print("WITHOUT ANY SPACES IN THE FILE PATH")
-    }
+        else {
+            print("INVALID FILE PATH")
+            print("PLEASE USE THIS FORMAT: ")
+            print("home/directory/file.example")
+            print("WITHOUT ANY SPACES IN THE FILE PATH")
+        } 
+    }  
 }
 
 
