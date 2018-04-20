@@ -409,7 +409,7 @@ func readArguments() {
             print("============================================") // 46 "="
             print("======          Array sorted           =====") 
             print("============================================") // 46 "="
-            for _ 1...repeatN {
+            for _ in 1...repeatN {
                 switch input_sortType {
                 case 1:
                     print("Bubble Sort")
@@ -428,14 +428,6 @@ func readArguments() {
                 }
             }
         }
-    }
-    else {
-        print("INVALID FILE PATH")
-        print("PLEASE USE THIS FORMAT: ")
-        print("home/directory/file.example")
-        print("WITHOUT ANY SPACES IN THE FILE PATH")
-    }
-        
     }
     else if (CommandLine.arguments[1] == "--read") {
         print("read")
