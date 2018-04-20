@@ -388,13 +388,10 @@ func readArguments() {
     }
     else if (CommandLine.arguments[1] == "--read" && CommandLine.arguments[3] == "--executeSort") {
         print("execute sort")
-        if(CommandLine.argc == 4) {
+        if(CommandLine.argc == 5) {
             let filePath = CommandLine.arguments[2]
+            let sortType = CommnandLine.arguments[4]
             ui_openingMenu()
-            var input_sortType = 0
-            while(input_sortType < 1 || input_sortType > 4) {
-                input_sortType = intInput()
-            }
             let arrayToSort = readFile(pathIn: filePath).split(separator:"|").map{ Int($0)!}
             print("============================================") // 46 "="
             print("======       Array to be sorted        =====") 
@@ -403,23 +400,21 @@ func readArguments() {
             print("============================================") // 46 "="
             print("======          Array sorted           =====") 
             print("============================================") // 46 "="
-            for _ in 0...repeatN {
-                switch input_sortType {
-                case 1:
-                    print("Bubble Sort")
-                    print(bubbleSort(array: arrayToSort))
-                case 2:
-                    print("Insertion Sort")
-                    print(insertionSort(array: arrayToSort))
-                case 3:
-                    print("Selection Sort")  
-                    print(selectionSort(array: arrayToSort))
-                case 4:
-                    print("Merge Sort")   
-                    print(mergeSort(array: arrayToSort))
-                default:
-                    print("Invalid sort")
-                }
+            switch sortType {
+            case "bubble":
+                print("Bubble Sort")
+                print(bubbleSort(array: arrayToSort))
+            case "insertion":
+                print("Insertion Sort")
+                print(insertionSort(array: arrayToSort))
+            case "selection":
+                print("Selection Sort")  
+                print(selectionSort(array: arrayToSort))
+            case "merge":
+                print("Merge Sort")   
+                print(mergeSort(array: arrayToSort))
+            default:
+                print("Invalid sort")
             }
         }
         else {
