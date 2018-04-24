@@ -391,7 +391,7 @@ func readArguments() {
         if(CommandLine.argc == 5) {
             let filePath = CommandLine.arguments[2]
             let sortType = CommandLine.arguments[4]
-            ui_openingMenu()
+            //ui_openingMenu()
             let arrayToSort = readFile(pathIn: filePath).split(separator:"|").map{ Int($0)!}
             print("============================================") // 46 "="
             print("======       Array to be sorted        =====") 
