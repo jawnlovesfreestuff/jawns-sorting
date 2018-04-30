@@ -80,17 +80,13 @@ func swapFunc(array: inout [Int], firstIndex: Int, secondIndex: Int) {
 
 func bubbleSort(array: [Int]) -> [Int] {
     var containerArray: [Int] = array
-    var totalPasses = 0
-    var totalSwaps = 0
     func sortPass(sortArray: inout [Int]) {
         // sorting code
         for i in 0...sortArray.count-2 {
             if(sortArray[i] > sortArray[i+1]) {
                 swapFunc(array: &sortArray, firstIndex: i, secondIndex: i+1)
-                totalSwaps += 1 // global var
             }        
         }
-        totalPasses += 1 // global var
     }
     func isAscending(checkArray: [Int]) -> Bool {
         for i in 0...checkArray.count-2 {
@@ -119,27 +115,21 @@ func bubbleSort(array: [Int]) -> [Int] {
 
 func insertionSort(array: [Int]) -> [Int]{
     var containerArray: [Int] = array
-    var totalPasses = 0
-    var totalSwaps = 0
     var pointerPos = 1
 
     func sortPassByPointer(sortArray: inout [Int], pointerPos: Int) {
         for i in 0...sortArray.count-2 {
             if(sortArray[i] > sortArray[i+1]) {
                 swapFunc(array: &sortArray, firstIndex: i, secondIndex: i+1)
-                totalSwaps += 1 // global var
             }        
         }
-        totalPasses += 1 // global var
     }
 
     func isAscendingTotal(checkArray: [Int]) -> Bool {
         for i in 0...checkArray.count-2 {
             if(checkArray[i] > checkArray[i+1]) {
-
                 return false // array is not sorted
             }
-
         }
         return true // array is sorted
     }
